@@ -1,0 +1,60 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "static-footer",
+      "blocks": {
+        "social_accounts": {
+          "type": "social_accounts",
+          "settings": {
+          }
+        },
+        "menu_3": {
+          "type": "menu",
+          "settings": {
+            "menu": "main-menu"
+          }
+        },
+        "rich_text_yW9WmF": {
+          "type": "rich_text",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Kamloops<\/strong><\/p><p>657 Sarcee Street West<br\/>Kamloops BC V2H 1E4<br\/>t:778-399-0737<br\/>t:888-634-3418<\/p><p><\/p><p><strong>Winnipeg<\/strong><\/p><p>270 Transport Rd<br\/>Winnipeg MB R2C 2Z2<br\/>t:204-694-1165<br\/>t:866-679-7245<\/p>"
+          }
+        },
+        "rich_text_AxpVAc": {
+          "type": "rich_text",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Calgary<\/strong><\/p><p>2115-4416 64 Ave SE<br\/>Calgary AB T2C 2B3<br\/>t:403-879-2495<br\/>t:888-437-4779<\/p><p><\/p><p><strong>Toronto<\/strong><\/p><p>4-130 Pennsylvania Ave<br\/>Concord ON L4K 4A8<br\/>t:905-760-9785<br\/>t:888-253-6806<\/p>"
+          }
+        },
+        "rich_text_fR6kyw": {
+          "type": "rich_text",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Edmonton<\/strong><\/p><p>55 Corriveau Ave<br\/>St.Albert AB T8N 5A3<br\/>t:780-418-4252<br\/>t:888-744-7245<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "social_accounts",
+        "menu_3",
+        "rich_text_yW9WmF",
+        "rich_text_AxpVAc",
+        "rich_text_fR6kyw"
+      ],
+      "settings": {
+        "show_follow_on_shop": true,
+        "payment_icons": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "additional_menu": "other-links"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "dynamic_html_AUK8aC": {
+      "type": "dynamic-html",
+      "custom_css": [
+        "section {margin: 0px; padding: 0px;}",
+        ".wvco-hero {height: 80vh; width: 100vw; padding: 50px;}",
+        ".container {display: flex; justify-content: center; align-items: center; height: 100%; gap: 50px;}",
+        ".title-area {flex-basis: 500px;}",
+        ".button-container {text-align: center;}",
+        ".header-img {flex-grow: 1;}",
+        ".button-container {flex-basis: 200px;}",
+        "button {background: #f57523; color: white; padding: 10px 20px; border: none; cursor: pointer;}",
+        ".video-wrapper {flex-basis: 600px;}"
+      ],
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"wvco-hero\">\n  <div class=\"container\">\n      <div class=\"video-wrapper\">\n        <iframe src=\"https:\/\/player.vimeo.com\/video\/896932588?h=a9b8c43080\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\"><\/iframe>\n      <\/div>\n <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/wvco-header.png?v=1720481920\">\n          <\/div>\n          <div class=\"button-container\">\n              <a href=\"https:\/\/wvcorailroad.com\/\"><button>Service, Innovation, Integrity<\/button><\/a>\n          <\/div>\n      <\/div>\n  <\/div>\n<\/div>"
+      }
+    },
+    "dynamic_html_fNrA6U": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"video-section\">\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/966968651?h=ddc5430d6c\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen><\/iframe>\n  <\/div>\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/954577211?h=8a3c5dcb72\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen><\/iframe>\n  <\/div>\n<\/div>\n\n<style>\n.video-section {\n  display: flex;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 20px;\n}\n\n.video-item {\n  flex-basis: 50%;\n}\n<\/style>"
+      }
+    },
+    "dynamic_featured_collection_Pehgxe": {
+      "type": "dynamic-featured-collection",
+      "custom_css": [
+        "figure {height: 200px; max-width: 175px; margin: auto; display: flex; align-items: center; justify-content: center;}",
+        ".productgrid--item {min-width: 180px;}"
+      ],
+      "settings": {
+        "title": "Featured collection",
+        "layout": "grid",
+        "mobile_layout": "slideshow",
+        "collection": "spikefast",
+        "product_count": 5,
+        "cta_label": "Shop collection",
+        "cta_button_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dynamic_html_AUK8aC",
+    "dynamic_html_fNrA6U",
+    "dynamic_featured_collection_Pehgxe"
+  ]
+}

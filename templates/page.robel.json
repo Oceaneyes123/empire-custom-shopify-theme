@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "dynamic_html_fh76dV": {
+      "type": "dynamic-html",
+      "custom_css": [
+        "section {margin: 0px; padding: 0px;}",
+        ".robel-hero {height: 80vh; width: 100vw; padding: 50px;}",
+        ".container {display: flex; justify-content: center; align-items: center; height: 100%; gap: 50px;}",
+        ".title-area {flex-basis: 500px;}",
+        ".header-img {flex-grow: 1;}",
+        ".button-container {flex-basis: 200px; text-align: center;}",
+        "button {background: #f57523; color: white; padding: 10px 20px; border: none; cursor: pointer;}",
+        ".video-wrapper {flex-basis: 600px;}"
+      ],
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"robel-hero\">\n  <div class=\"container\">\n      <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/robel-header.png?v=1720481917\">\n          <\/div>\n          <div class=\"button-container\">\n              <a href=\"https:\/\/www.robel.us\/en\/\"><button>GREAT ON TRACK<\/button><\/a>\n          <\/div>\n      <\/div>\n      <div class=\"video-wrapper\">\n          <iframe width=\"1280\" height=\"720\" src=\"https:\/\/www.youtube.com\/embed\/9vNxYO7_BnI?si=wKeCb8eZwlFqwoUE\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"><\/iframe>\n      <\/div>\n  <\/div>\n<\/div>"
+      }
+    },
+    "dynamic_featured_collection_qh3KKd": {
+      "type": "dynamic-featured-collection",
+      "custom_css": [
+        "figure {height: 200px; max-width: 175px; margin: auto; display: flex; align-items: center; justify-content: center;}",
+        ".productgrid--item {min-width: 180px;}"
+      ],
+      "settings": {
+        "title": "Featured collection",
+        "layout": "grid",
+        "mobile_layout": "slideshow",
+        "collection": "robel-canada",
+        "product_count": 5,
+        "cta_label": "Shop collection",
+        "cta_button_style": "primary"
+      }
+    },
+    "dynamic_blog_posts_wbHBEV": {
+      "type": "dynamic-blog-posts",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "NEWS AND UPDATES",
+        "blog": "news",
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dynamic_html_fh76dV",
+    "dynamic_featured_collection_qh3KKd",
+    "dynamic_blog_posts_wbHBEV"
+  ]
+}

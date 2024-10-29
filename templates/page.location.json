@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "dynamic_html_iicyrt": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"location\">\n  <h2>CHECK OUR LOCATIONS<\/h2>\n  <div class=\"location-wrapper\">\n    <div class=\"location-box\">\n      <h4>ST. ALBERT<\/h4>\n      <p>55 Corriveau Ave<br>St.Albert AB T8N 5A3<br>t:780-418-4252<br>t:888-744-7245<\/p>\n      <a href=\"https:\/\/www.stihl.ca\/en\/dealers\/backtrack-railway-services-ltd.-4c0cd43e-daa0-ea11-a813-000d3a6540e8\">\n        <div class=\"location-button\">GO TO LOCATION<\/div>\n      <\/a>\n    <\/div>\n    <div class=\"location-box\">\n      <h4>KAMLOOPS<\/h4>\n      <p>657 Sarcee Street West<br>Kamloops BC V2H 1E4<br>t:778-399-0737<br>t:888-634-3418<\/p>\n      <a href=\"https:\/\/www.stihl.ca\/en\/dealers\/backtrack-railway-services-ltd.-421f78df-c469-4848-a212-f808e172ed84\">\n        <div class=\"location-button\">GO TO LOCATION<\/div>\n      <\/a>\n    <\/div>\n  <\/div>\n<\/div>\n\n\n<style>\n.location{\n  padding: 0 5vw;\n}\n.location-box {\n  max-width: 200px;\n}\nh2{\n  font-size: 2em;\n}\nh4 {\n  font-size: 1.7em;\n}\np {\n  font-size: 1.2em;\n}\n.location-wrapper {\n  display: flex;\n  gap: 100px;\n}\n.location-button{\n  background-color: #F57523;\n  color: white;\n  padding: 10px 20px;\n  font-size: 1.2em;\n}\n<\/style>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dynamic_html_iicyrt"
+  ]
+}

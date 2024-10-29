@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "static-cart",
+      "custom_css": [
+        "#cart-note {padding-top: 2px;}",
+        ".form-field-input::placeholder{opacity: 0.6}"
+      ],
+      "settings": {
+        "show_vendor": false,
+        "show_sku": false,
+        "enable_order_notes": true,
+        "enable_shipping_calc": true,
+        "shipping_calc_default_country": "United States"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

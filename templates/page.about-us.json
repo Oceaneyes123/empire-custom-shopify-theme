@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "pxs_image_with_text_overlay_yzRRiU": {
+      "type": "pxs-image-with-text-overlay",
+      "settings": {
+        "section_height": "medium",
+        "image": "shopify:\/\/shop_images\/Application_5_1_a6b21476-1dcd-445c-8874-33501fc72b86.png",
+        "title": "About Us",
+        "text": "<p><strong>YOUR ONE-STOP RAILWAY EQUIPMENT, PARTS & SERVICE SOLUTION<\/strong><\/p>",
+        "content_position": "center-center",
+        "color": "#ffffff",
+        "overlay_background": "#000000",
+        "overlay_opacity": 50,
+        "link": "",
+        "button_text": ""
+      }
+    },
+    "dynamic_image_with_text_ViHf98": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/working10.png",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "left",
+        "mobile_image_alignment": "top",
+        "heading": "KNOWLEDGE AND EXPERTISE TO SUPPORT YOU IN EVERY WAY",
+        "subheading": "<p>For over 27 years, Backtrack has been serving the railway industry. With five locations across the country and a mobile trailer, we have the ability to get you what you need anywhere in Canada…fast!<\/p><p>We’ve built trusted relationships with every major manufacturer, making Backtrack Canada’s only factory authorized repair, warranty and distribution centre focused exclusively on railway parts, tools and accessories. We offer an extensive inventory of new, used and discontinued OEM parts and equipment. Chances are, if you need something, we’ve got it in stock.<\/p><p>Our knowledgeable team can help you plan and prepare for any project, ensuring that when you arrive on-site, you are prepared with all the tools, equipment and supplies the job requires. Our cumulative experience and specialization in the railway industry means that we can provide the advice and training you and your team need to get the job done right the first time.<\/p>",
+        "text_alignment": "left",
+        "button_label": "Button",
+        "button_link": ""
+      }
+    },
+    "dynamic_image_with_text_qV3rDa": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/aHViPTk1MTYxJmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzYwMjFhYWY2NjU3MDQucG5nJnZlcnNpb249MDAwMCZzaWc9MjkyZjJlMzhmYjc4ZWFiNTU0ZmEzZTQwMzY2YTY5Yjk_1_1.png",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "top",
+        "heading": "THE VALUE WE PROVIDE:",
+        "subheading": "<ul><li>Backtrack’s mobile trailer provides quick delivery and a showroom that can come to you<\/li><li>Project assistance to ensure you have what you need on-site for every project<\/li><li>Knowledgeable and experienced staff in our five locations across Canada<\/li><li>Factory authorized in-house repairs and support for all major brands<\/li><li>In-house repairs and manufacturing<\/li><\/ul>",
+        "text_alignment": "left",
+        "button_label": "Button",
+        "button_link": ""
+      }
+    },
+    "dynamic_rich_text_YXBqJT": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "regular",
+        "title": "THE BEST BRANDS & EQUIPMENT",
+        "text": "<p>We have worked hard to build relationships with the most reputable brands and suppliers in the industry to ensure we have the highest quality parts and equipment available to you when needed.<\/p>",
+        "heading_size": "medium",
+        "text_alignment": "center"
+      }
+    },
+    "dynamic_logo_list_79Hb3G": {
+      "type": "dynamic-logo-list",
+      "blocks": {
+        "logo_bwQ6gL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_logo_geismar_1.svg",
+            "link": ""
+          }
+        },
+        "logo_Af6QpW": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_logo_harsco_1.svg",
+            "link": ""
+          }
+        },
+        "logo_Ux9FB6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_logo_portaco_1.svg",
+            "link": ""
+          }
+        },
+        "logo_ayKWAt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/STANLEY_LOGO.png",
+            "link": ""
+          }
+        },
+        "logo_Uj34ra": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ROBEL_North_America_Logo_R_4c-modified_1.svg",
+            "link": ""
+          }
+        },
+        "logo_tw4r8T": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MILWAUKEE_logo_RGB-white-in-box-modified_1.svg",
+            "link": ""
+          }
+        },
+        "logo_Tr3YeT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_logo_wvco_2.svg",
+            "link": ""
+          }
+        },
+        "logo_663wBF": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_grey_pneumatic_1.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_bwQ6gL",
+        "logo_Af6QpW",
+        "logo_Ux9FB6",
+        "logo_ayKWAt",
+        "logo_Uj34ra",
+        "logo_tw4r8T",
+        "logo_Tr3YeT",
+        "logo_663wBF"
+      ],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pxs_image_with_text_overlay_yzRRiU",
+    "dynamic_image_with_text_ViHf98",
+    "dynamic_image_with_text_qV3rDa",
+    "dynamic_rich_text_YXBqJT",
+    "dynamic_logo_list_79Hb3G"
+  ]
+}
