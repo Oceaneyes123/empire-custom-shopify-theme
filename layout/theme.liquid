@@ -103,7 +103,7 @@
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
 
-    <script src="{{ 'custom.js' | asset_url }}" async></script>
+    {% comment %} <script src="{{ 'custom.js' | asset_url }}" async></script> {% endcomment %}
 
   </head>
 
@@ -614,7 +614,7 @@
       defer
     >
     </script>
-    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    {% comment %} <script src="{{ 'custom.js' | asset_url }}" defer></script> {% endcomment %}
     <script>(function(n, v) {/* eslint-disable-next-line max-len */if (window.Shopify && window.Shopify.theme && navigator && navigator.sendBeacon && window.Shopify.designMode) {if (sessionStorage.getItem('oots_beacon')) return;navigator.sendBeacon('https://app.outofthesandbox.com/beacon', new URLSearchParams({shop_domain: window.Shopify.shop.toLowerCase(),shop_id: window.BOOMR.shopId,shop_email: '{{ shop.email }}',theme_name: n.toLowerCase(),theme_version: v.toLowerCase(),theme_store_id: window.Shopify.theme.theme_store_id,theme_id: window.Shopify.theme.id,theme_role: window.Shopify.theme.role,}));sessionStorage.setItem('oots_beacon', '');}}('empire','11.1.1'))</script>
   </body>  
 </html>

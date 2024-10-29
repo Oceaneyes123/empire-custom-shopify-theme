@@ -348,7 +348,7 @@
                     endif
                   %}
 
-                  {% unless onboarding %}
+                  {% if customer %}
                     {%
                       render 'product-form',
                       product: product,
@@ -358,7 +358,34 @@
                       selected_variant: selected_variant,
                       is_product_modal: is_product_modal,
                     %}
-                  {% endunless %}
+                  {% else %}
+                    {% if product.tags contains 'hide_price_and_atc' %}
+                      <div
+                        class="
+                          productitem--action
+                          see-price-button
+                          {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
+                        "
+                        style="width:100%"
+                      >
+                        <a href="/account/login" style="text-decoration:none;">
+                          <button onclick="seePriceLogin()" class="see-the-price--btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded" type="button">
+                            <span class="atc-button--text">See the Price</span>
+                          </button>
+                        </a>
+                      </div>
+                    {% else %}
+                      {%
+                        render 'product-form',
+                        product: product,
+                        enable_local_pickup: enable_local_pickup,
+                        show_recipient_form: show_recipient_form,
+                        show_dynamic_checkout_button: show_dynamic_checkout_button,
+                        selected_variant: selected_variant,
+                        is_product_modal: is_product_modal,
+                      %}
+                    {% endif %}
+                  {% endif %}
                 </div>
               </div>
 
