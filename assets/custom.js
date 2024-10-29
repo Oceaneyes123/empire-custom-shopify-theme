@@ -13,56 +13,56 @@ let url = window.location.pathname;
 let homePageRegex = /^\/$/;
 let collectionPageRegex = /^\/collections\/.*$/; //PRODUCT PAGE
 let productViewPageRegex = /^.*\/products\/.*$/;
-// homePageRegex.test(url) ||
-if(collectionPageRegex.test(url)){
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://cdn.shopify.com/s/files/1/0616/5590/8525/files/hideProducts.json?v=1729930099')
-        .then(response => response.json())
-        .then(data => {
-            let isLogin = localStorage.getItem('isLoggedIn') === 'true';
-            if (!isLogin) {
-                let productItemContainers = document.querySelectorAll('.productitem__container');
-                let dataTitles = new Set(data.map(item => item.title));
+
+// if(homePageRegex.test(url) || collectionPageRegex.test(url)){
+//     document.addEventListener('DOMContentLoaded', function() {
+//         fetch('https://cdn.shopify.com/s/files/1/0616/5590/8525/files/hideProducts.json?v=1729930099')
+//         .then(response => response.json())
+//         .then(data => {
+//             let isLogin = localStorage.getItem('isLoggedIn') === 'true';
+//             if (!isLogin) {
+//                 let productItemContainers = document.querySelectorAll('.productitem__container');
+//                 let dataTitles = new Set(data.map(item => item.title));
                 
-                //HOME  AND PRODUCT PAGE
-                productItemContainers.forEach(container => {
-                    let title = container.querySelector('.productitem--title').textContent.trim();
-                    if (dataTitles.has(title)) {
-                        let price = container.querySelector('.productitem__price');
-                        let action = container.querySelector('.productitem--actions');
-                        if (price) price.style.display = 'none';
-                        if (action){
-                            action.innerHTML = buttonHTML;
-                        }else{
-                            let div = document.createElement('div');
-                            div.innerHTML = buttonHTML;
-                            price.parentNode.appendChild(div);
-                        }
-                    }
-                });
-            }
-        })
-        .then(() => {
-            let productItemContainers = document.querySelectorAll('.productitem__container');
-            productItemContainers.forEach(container => {
-                //OUT OF STOCK
-                let stock = container.querySelector('.product-stock-level__text');
-                if (stock && stock.innerText === 'Out of stock') {
-                    let action = container.querySelector('.productitem--actions');
-                    if (action) {
-                        let contactButton = document.createElement('div');
-                        contactButton.style.width = '100%';
-                        contactButton.innerHTML = contactButtonHTML;
-                        action.appendChild(contactButton);
-                    }
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching hideProducts.json:', error);
-        });
-    });
-}
+//                 //HOME  AND PRODUCT PAGE
+//                 productItemContainers.forEach(container => {
+//                     let title = container.querySelector('.productitem--title').textContent.trim();
+//                     if (dataTitles.has(title)) {
+//                         let price = container.querySelector('.productitem__price');
+//                         let action = container.querySelector('.productitem--actions');
+//                         if (price) price.style.display = 'none';
+//                         if (action){
+//                             action.innerHTML = buttonHTML;
+//                         }else{
+//                             let div = document.createElement('div');
+//                             div.innerHTML = buttonHTML;
+//                             price.parentNode.appendChild(div);
+//                         }
+//                     }
+//                 });
+//             }
+//         })
+//         .then(() => {
+//             let productItemContainers = document.querySelectorAll('.productitem__container');
+//             productItemContainers.forEach(container => {
+//                 //OUT OF STOCK
+//                 let stock = container.querySelector('.product-stock-level__text');
+//                 if (stock && stock.innerText === 'Out of stock') {
+//                     let action = container.querySelector('.productitem--actions');
+//                     if (action) {
+//                         let contactButton = document.createElement('div');
+//                         contactButton.style.width = '100%';
+//                         contactButton.innerHTML = contactButtonHTML;
+//                         action.appendChild(contactButton);
+//                     }
+//                 }
+//             });
+//         })
+//         .catch(error => {
+//             console.error('Error fetching hideProducts.json:', error);
+//         });
+//     });
+// }
 
 // PRODUCT VIEW PAGE
 if(productViewPageRegex.test(url)){

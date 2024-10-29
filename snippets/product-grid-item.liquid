@@ -397,23 +397,45 @@
         </a>
       </div>
 
-      {%- capture product_item_price -%}
-        {%
-          render 'product-price',
-          product: product,
-          class_root: 'productitem',
-          price: price,
-          price_varies: price_varies,
-          compare_at_price: compare_at_price,
-          compare_at_price_varies: compare_at_price_varies,
-          on_sale: on_sale,
-          emphasize_price: emphasize_price,
-          show_original: true,
-          show_range: true,
-          include_unit_price: true,
-          include_hidden_price: false,
-        %}
-      {%- endcapture -%}
+      {% if customer %}
+        {%- capture product_item_price -%}
+          {%
+            render 'product-price',
+            product: product,
+            class_root: 'productitem',
+            price: price,
+            price_varies: price_varies,
+            compare_at_price: compare_at_price,
+            compare_at_price_varies: compare_at_price_varies,
+            on_sale: on_sale,
+            emphasize_price: emphasize_price,
+            show_original: true,
+            show_range: true,
+            include_unit_price: true,
+            include_hidden_price: false,
+          %}
+        {%- endcapture -%}
+      {% else %}
+        {% unless product.tags contains 'hide_price_and_atc' %}
+          {%- capture product_item_price -%}
+            {%
+              render 'product-price',
+              product: product,
+              class_root: 'productitem',
+              price: product.price,
+              price_varies: product.price_varies,
+              compare_at_price: product.compare_at_price,
+              compare_at_price_varies: product.compare_at_price_varies,
+              on_sale: product.on_sale,
+              emphasize_price: product.emphasize_price,
+              show_original: true,
+              show_range: true,
+              include_unit_price: true,
+              include_hidden_price: false
+            %}
+          {%- endcapture -%}
+        {% endunless %}
+      {% endif %}
 
       <div class="productitem--info">
         {% unless countdown_timer %}
@@ -525,84 +547,207 @@
             {% assign quick_buy_text = 'product.buttons.sold_out' | t %}
             {% assign quick_buy_classes = quick_buy_classes | append: ' disabled' %}
           {% endunless %}
-
-          <div class="productitem--actions" data-product-actions>
-            <div class="productitem--listview-price">
-              {{ product_item_price }}
-            </div>
-
-            <div class="productitem--listview-badge">
-              {%
-                render 'product-badge',
-                product: product,
-                class_root: 'productitem',
-                product_available: product_available,
-                price: price,
-                price_varies: price_varies,
-                compare_at_price: compare_at_price,
-                compare_at_price_varies: compare_at_price_varies,
-                on_sale: on_sale,
-                show_saved: consistent_saved,
-                include_range: true,
-              %}
-            </div>
-
-            {% if enable_quickshop %}
-              <div
-                class="
-                  productitem--action
-                  quickshop-button
-                  {% if quick_shop_display == 'desktop' %}productitem-action--desktop{% endif %}
-                "
-              >
-                <button
-                  class="{{ quick_shop_classes }}"
-                  data-quickshop-full
-                  {% if settings.gallery_thumbnail_position == 'left' %}
-                    data-thumbs-left
-                  {% endif %}
-                  {% if product == false %}
-                    disabled
-                  {% endif %}
-                  type="button"
+      
+          {% if customer %}
+            <div class="productitem--actions" data-product-actions>
+              <div class="productitem--listview-price">
+                {{ product_item_price }}
+              </div>
+      
+              <div class="productitem--listview-badge">
+                {%
+                  render 'product-badge',
+                  product: product,
+                  class_root: 'productitem',
+                  product_available: product_available,
+                  price: price,
+                  price_varies: price_varies,
+                  compare_at_price: compare_at_price,
+                  compare_at_price_varies: compare_at_price_varies,
+                  on_sale: on_sale,
+                  show_saved: consistent_saved,
+                  include_range: true,
+                %}
+              </div>
+      
+              {% if enable_quickshop %}
+                <div
+                  class="
+                    productitem--action
+                    quickshop-button
+                    {% if quick_shop_display == 'desktop' %}productitem-action--desktop{% endif %}
+                  "
                 >
-                  {{ quick_shop_text }}
-                </button>
+                  <button
+                    class="{{ quick_shop_classes }}"
+                    data-quickshop-full
+                    {% if settings.gallery_thumbnail_position == 'left' %}
+                      data-thumbs-left
+                    {% endif %}
+                    {% if product == false %}
+                      disabled
+                    {% endif %}
+                    type="button"
+                  >
+                    {{ quick_shop_text }}
+                  </button>
+                </div>
+              {% endif %}
+      
+              {% if atc_button %}
+                <div
+                  class="
+                    productitem--action
+                    atc--button
+                    {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
+                  "
+                >
+                  <button
+                    class="{{ quick_buy_classes }}"
+                    type="button"
+                    aria-label="{{ quick_buy_text }}"
+                    {% unless has_variants %}
+                      data-quick-buy
+                    {% else %}
+                      data-quickshop-slim
+                    {% endunless %}
+                    data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    {% if product == false or product_available == false %}
+                      disabled
+                    {% endif %}
+                  >
+                    <span class="atc-button--text">
+                      {{ quick_buy_text }}
+                    </span>
+                    <span class="atc-button--icon">
+                      {%- render 'icon-spinner' -%}
+                    </span>
+                  </button>
+                </div>
+              {% endif %}
+            </div>
+          {% else %}
+            {% if product.tags contains 'hide_price_and_atc' %}
+              <div class="productitem--actions" data-product-actions>
+                <div class="productitem--listview-price">
+                  {{ product_item_price }}
+                </div>
+      
+                <div class="productitem--listview-badge">
+                  {%
+                    render 'product-badge',
+                    product: product,
+                    class_root: 'productitem',
+                    product_available: product_available,
+                    price: price,
+                    price_varies: price_varies,
+                    compare_at_price: compare_at_price,
+                    compare_at_price_varies: compare_at_price_varies,
+                    on_sale: on_sale,
+                    show_saved: consistent_saved,
+                    include_range: true,
+                  %}
+                </div>
+      
+                <div
+                  class="
+                    productitem--action
+                    see-price-button
+                    {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
+                  "
+                >
+                  <a href="/account/login" style="text-decoration: none;">
+                    <button
+                      class="productitem--action-trigger button-primary"
+                      type="button"
+                    >
+                      <span class="atc-button--text">
+                        See the Price
+                      </span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            {% else %}
+              <div class="productitem--actions" data-product-actions>
+                <div class="productitem--listview-price">
+                  {{ product_item_price }}
+                </div>
+      
+                <div class="productitem--listview-badge">
+                  {%
+                    render 'product-badge',
+                    product: product,
+                    class_root: 'productitem',
+                    product_available: product_available,
+                    price: price,
+                    price_varies: price_varies,
+                    compare_at_price: compare_at_price,
+                    compare_at_price_varies: compare_at_price_varies,
+                    on_sale: on_sale,
+                    show_saved: consistent_saved,
+                    include_range: true,
+                  %}
+                </div>
+      
+                {% if enable_quickshop %}
+                  <div
+                    class="
+                      productitem--action
+                      quickshop-button
+                      {% if quick_shop_display == 'desktop' %}productitem-action--desktop{% endif %}
+                    "
+                  >
+                    <button
+                      class="{{ quick_shop_classes }}"
+                      data-quickshop-full
+                      {% if settings.gallery_thumbnail_position == 'left' %}
+                        data-thumbs-left
+                      {% endif %}
+                      {% if product == false %}
+                        disabled
+                      {% endif %}
+                      type="button"
+                    >
+                      {{ quick_shop_text }}
+                    </button>
+                  </div>
+                {% endif %}
+      
+                {% if atc_button %}
+                  <div
+                    class="
+                      productitem--action
+                      atc--button
+                      {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
+                    "
+                  >
+                    <button
+                      class="{{ quick_buy_classes }}"
+                      type="button"
+                      aria-label="{{ quick_buy_text }}"
+                      {% unless has_variants %}
+                        data-quick-buy
+                      {% else %}
+                        data-quickshop-slim
+                      {% endunless %}
+                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                      {% if product == false or product_available == false %}
+                        disabled
+                      {% endif %}
+                    >
+                      <span class="atc-button--text">
+                        {{ quick_buy_text }}
+                      </span>
+                      <span class="atc-button--icon">
+                        {%- render 'icon-spinner' -%}
+                      </span>
+                    </button>
+                  </div>
+                {% endif %}
               </div>
             {% endif %}
-
-            {% if atc_button %}
-              <div
-                class="
-                  productitem--action
-                  atc--button
-                  {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
-                "
-              >
-                <button
-                  class="{{ quick_buy_classes }}"
-                  type="button"
-                  aria-label="{{ quick_buy_text }}"
-                  {% unless has_variants %}
-                    data-quick-buy
-                  {% else %}
-                    data-quickshop-slim
-                  {% endunless %}
-                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                  {% if product == false or product_available == false %}
-                    disabled
-                  {% endif %}
-                >
-                  <span class="atc-button--text">
-                    {{ quick_buy_text }}
-                  </span>
-                  <span class="atc-button--icon">
-                    {%- render 'icon-spinner' -%}
-                  </span>
-                </button>
-              </div>
-            {% endif %}
-          </div>
+          {% endif %}
         {% endif %}
       {% endunless %}
     </div>
