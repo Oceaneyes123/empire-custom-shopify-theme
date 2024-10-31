@@ -54,8 +54,7 @@
       "custom_css": [
         ".atc--button {width: 100%;}",
         ".see-the-price--btn {width: 100%;}",
-        ".product-gallery--image-background img {max-height: 700px; width: auto; max-width: 500px;}",
-        ".price__current {display: none;}"
+        ".product-gallery--image-background img {max-height: 700px; width: auto; max-width: 500px;}"
       ],
       "settings": {
         "gallery_aspect_ratio": "natural",
