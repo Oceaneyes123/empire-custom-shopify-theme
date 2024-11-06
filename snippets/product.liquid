@@ -106,6 +106,39 @@
   -%}
 {%- endcapture  -%}
 
+<script>
+  var product = {{ product | json }};
+  console.log(product);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var variantSelectElement = document.querySelector('[data-variant-selection]');
+    var productGalleryElement = document.querySelector('[data-gallery-scroller]');
+
+    // NO USE - JUST FOR REFERENCE
+    // HANDLING VARIANT CHANGE
+    if (variantSelectElement) {
+      variantSelectElement.addEventListener('change', function(event) {
+        var selectedVariantId = event.target.value;
+        //console.log('Selected variant ID:', selectedVariantId);
+      });
+    }
+
+    //UPDATE VARIANT SELECT BASED ON PRODUCT GALLERY SELECTION
+    productGalleryElement.addEventListener('click', function(event) {   
+      setTimeout(function() {
+          var selectedElement = document.querySelectorAll('[data-gallery-selected=true]')[1];
+          var selectedMedia = selectedElement.getAttribute('data-media');
+          var selectedVariant = product.variants.find(function(variant) {
+            return variant.featured_media.id == selectedMedia;
+          });
+
+          var variantElement = document.querySelector('.options-selection__input-select');
+          variantElement.value = selectedVariant.title;
+        }, 100);
+    });
+  });
+</script>
+
 <article class="product--outer">
   {%
     render 'product-gallery',

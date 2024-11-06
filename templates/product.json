@@ -76,6 +76,10 @@
     },
     "recently-viewed": {
       "type": "static-recently-viewed",
+      "custom_css": [
+        ".flickity-slider {height: 100%;}",
+        ".productgrid--item {height: 370px;}"
+      ],
       "settings": {
         "enable_recently_viewed_products": true
       }
