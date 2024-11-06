@@ -128,9 +128,15 @@
       setTimeout(function() {
           var selectedElement = document.querySelectorAll('[data-gallery-selected=true]')[1];
           var selectedMedia = selectedElement.getAttribute('data-media');
-          var selectedVariant = product.variants.find(function(variant) {
-            return variant.featured_media.id == selectedMedia;
-          });
+          var selectedVariant;
+          for (var i = 0; i < product.variants.length; i++) {
+            var variant = product.variants[i];
+            if (variant.featured_media && variant.featured_media.id == selectedMedia) {
+              selectedVariant = variant;
+              break;
+            }
+          }
+          console.log(selectedVariant)
 
           var variantElement = document.querySelector('.options-selection__input-select');
           variantElement.value = selectedVariant.title;
