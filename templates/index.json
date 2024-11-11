@@ -52,9 +52,7 @@
     },
     "dynamic_html_bf3Qxw": {
       "type": "dynamic-html",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
         "custom_html": "<div class=\"home-external-container\">\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/robel-header.png?v=1720481917\" alt=\"Robel\">\n      <div class=\"external-header\">Great On Track<\/div>\n    <\/div>\n    <a href=\"\/pages\/robel\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/stihl-logo.svg?v=1719365050\" alt=\"Stihl\">\n      <div class=\"external-header\">Forestry and Landscaping<\/div>\n    <\/div>\n    <a href=\"\/pages\/locations\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/WVCO_logo_White.png?v=1721605616\" alt=\"WVCO\">\n      <div class=\"external-header\">World Class<\/div>\n      <div class=\"external-text\">\n        Partnering Through Service, Innovation, and Integrity\n      <\/div>\n    <\/div>\n    <a href=\"\/pages\/wvco\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n<\/div>\n\n<style>\n.home-external-container {\n    display: flex;\n    gap: 20px;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n.external-box{\n  display: flex;\n  flex-direction: column;\n  padding: 30px;\n  align-items: center;\n  justify-content: center;\n  background-color: #0b213e;\n  flex-grow: 1;\n  flex-basis: 200px;\n}\n\nimg{\n  width: 200px;\n}\n\n.external-header{\n  color: white;\n  font-size: 20px;\n  font-weight: 700;\n  margin-top: 10px;\n}\n\n.external-text{\n  color: white;\n  font-size: 14px;\n  text-align: center;\n}\n\n.external-header-wrapper{\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.button{\n  color: white;\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 700;\n  margin-top: 10px;\n  background-color: #F57523;\n  padding: 10px 20px;\n}\n<\/style>"
@@ -306,9 +304,7 @@
         "collection_MAjTbV",
         "collection_t9MQna"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "Collection list",
         "thumbnail_columns_desktop": 3,
@@ -335,9 +331,7 @@
     },
     "dynamic_image_with_text_FEUAXk": {
       "type": "dynamic-image-with-text",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "section_heading": "",
         "image": "shopify:\/\/shop_images\/Group_215.png",
@@ -365,9 +359,7 @@
     "dynamic_html_hdRFkM": {
       "type": "dynamic-html",
       "disabled": true,
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
         "custom_html": "<div class=\"main-container\">\n    <div class=\"marquee-container\"> \n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_geismar.png?v=1679458952\" width=\"140\" height=\"140\" alt=\"Geismar\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_harsco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Harsco\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_portaco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"PortaCo\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_husqvarna.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Husqvarna\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/STANLEY_LOGO.png?v=1665753150\" width=\"140\" height=\"140\" alt=\"Stanley\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/ROBEL_North_America_Logo_R_4c-modified_1_378289e8-039d-4f08-97a1-cbaec9ff9e05.svg?v=1702293483\" width=\"140\" height=\"140\" alt=\"Robel\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/MILWAUKEE_logo_RGB-white-in-box-modified_1_35efd338-0fae-460a-969f-03003f806f42.svg?v=1702295402\" width=\"140\" height=\"140\" alt=\"Milwaukee\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_wvco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"WVCO\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_grey_pneumatic.jpg?v=1679459439\" width=\"140\" height=\"140\" alt=\"GP\">\n    <\/div>\n<\/div>"

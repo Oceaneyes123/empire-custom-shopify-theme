@@ -114,21 +114,52 @@
     var variantSelectElement = document.querySelector('[data-variant-selection]');
     var productGalleryElement = document.querySelector('[data-gallery-scroller]');
 
-    // NO USE - JUST FOR REFERENCE
     // HANDLING VARIANT CHANGE
     if (variantSelectElement) {
       variantSelectElement.addEventListener('change', function(event) {
-        var selectedVariantId = event.target.value;
-        //console.log('Selected variant ID:', selectedVariantId);
+        var selectedVariantTitle= event.target.value;
+        var selectedVariant = product.variants.find(variant => variant.title == selectedVariantTitle);
+        if (selectedVariant && selectedVariant.featured_media) {
+          var selectedMediaId = selectedVariant.featured_media.id;
+          var selectedElement = document.querySelectorAll(`[data-media="${selectedMediaId}"]`);
+
+          //set all media to hidden first
+          var allMediaElements = document.querySelectorAll('[data-media]');
+          for (var i = 0; i < allMediaElements.length; i++) {
+            allMediaElements[i].setAttribute('aria-hidden', 'true');
+            allMediaElements[i].setAttribute('data-gallery-selected', 'false');
+          }
+          
+          //change attribute to selected media
+          for (var i = 0; i < selectedElement.length; i++) {
+            if (selectedElement[i].tagName === 'FIGURE') {
+              selectedElement[i].setAttribute('aria-hidden', 'false');
+              selectedElement[i].setAttribute('data-gallery-selected', 'true');
+            }
+
+            if (selectedElement[i].tagName === 'BUTTON') {
+              selectedElement[i].setAttribute('data-gallery-selected', 'true');
+            }
+
+          }
+        }
       });
     }
 
-    //UPDATE VARIANT SELECT BASED ON PRODUCT GALLERY SELECTION
-    productGalleryElement.addEventListener('click', function(event) {   
+    
+
+    // UPDATE VARIANT SELECT BASED ON PRODUCT GALLERY SELECTION
+    productGalleryElement.addEventListener('click', function(event) { 
+      var allMediaElements = document.querySelectorAll('[data-media]');
+      for (var i = 0; i < allMediaElements.length; i++) {
+        allMediaElements[i].setAttribute('aria-hidden', 'true');
+        allMediaElements[i].setAttribute('data-gallery-selected', 'false');
+      } 
       setTimeout(function() {
           var selectedElement = document.querySelectorAll('[data-gallery-selected=true]')[1];
           var selectedMedia = selectedElement.getAttribute('data-media');
           var selectedVariant;
+
           for (var i = 0; i < product.variants.length; i++) {
             var variant = product.variants[i];
             if (variant.featured_media && variant.featured_media.id == selectedMedia) {
@@ -136,8 +167,6 @@
               break;
             }
           }
-          console.log(selectedVariant)
-
           var variantElement = document.querySelector('.options-selection__input-select');
           variantElement.value = selectedVariant.title;
         }, 100);
