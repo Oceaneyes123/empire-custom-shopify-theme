@@ -146,8 +146,6 @@
       });
     }
 
-    
-
     // UPDATE VARIANT SELECT BASED ON PRODUCT GALLERY SELECTION
     productGalleryElement.addEventListener('click', function(event) { 
       var allMediaElements = document.querySelectorAll('[data-media]');
@@ -167,8 +165,11 @@
               break;
             }
           }
+          var price = selectedVariant.price;
           var variantElement = document.querySelector('.options-selection__input-select');
           variantElement.value = selectedVariant.title;
+          var moneyElement = document.querySelector('.price__current').querySelector('.money');
+           moneyElement.textContent = `$${(price / 100).toFixed(2)}`;
         }, 100);
     });
   });
@@ -355,7 +356,7 @@
                   selected_variant: selected_variant,
                 %}
 
-                                {% if customer %}
+              {% if customer %}
                   {%
                     render 'product-price',
                     product: product,
