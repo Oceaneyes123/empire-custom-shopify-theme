@@ -2,8 +2,7 @@
   "sections": {
     "main": {
       "type": "static-subcollections-menu",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

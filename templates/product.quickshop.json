@@ -6,33 +6,27 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "form": {
           "type": "form",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -43,8 +37,7 @@
         "form",
         "description"
       ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

@@ -5,28 +5,23 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -36,18 +31,15 @@
         "price",
         "description"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "recommendations": {
       "type": "static-product-recommendations",
-      "settings": {
-      }
+      "settings": {}
     },
     "recently-viewed": {
       "type": "static-recently-viewed",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

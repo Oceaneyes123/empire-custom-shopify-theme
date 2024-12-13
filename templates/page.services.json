@@ -3,8 +3,7 @@
     "main": {
       "type": "page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "pxs_image_with_text_overlay_yzRRiU": {
       "type": "pxs-image-with-text-overlay",

@@ -3,8 +3,7 @@
     "main": {
       "type": "page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "dynamic_html_fh76dV": {
       "type": "dynamic-html",
@@ -41,9 +40,7 @@
     },
     "dynamic_blog_posts_wbHBEV": {
       "type": "dynamic-blog-posts",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "NEWS AND UPDATES",
         "blog": "news",

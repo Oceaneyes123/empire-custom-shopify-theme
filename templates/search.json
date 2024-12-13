@@ -5,15 +5,13 @@
       "blocks": {
         "filter-1": {
           "type": "filter",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
         "filter-1"
       ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

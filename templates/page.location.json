@@ -3,8 +3,7 @@
     "main": {
       "type": "page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "dynamic_html_iicyrt": {
       "type": "dynamic-html",

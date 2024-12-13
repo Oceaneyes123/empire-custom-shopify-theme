@@ -5,28 +5,23 @@
       "blocks": {
         "heading": {
           "type": "heading",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "inventory-status": {
           "type": "availability",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "heading-2": {
           "type": "heading",
@@ -64,8 +59,7 @@
         "dynamic-comparison-2",
         "dynamic-comparison-3"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "dynamic-highlights-banner": {
       "type": "dynamic-highlights-banner",

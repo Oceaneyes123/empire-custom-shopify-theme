@@ -5,28 +5,23 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "form": {
           "type": "form",
@@ -36,13 +31,11 @@
         },
         "key_details": {
           "type": "key_details",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -55,8 +48,7 @@
         "key_details",
         "share"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "recommendations": {
       "type": "static-product-recommendations",
