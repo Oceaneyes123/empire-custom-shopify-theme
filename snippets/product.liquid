@@ -168,6 +168,7 @@
           var price = selectedVariant.price;
           var variantElement = document.querySelector('.options-selection__input-select');
           variantElement.value = selectedVariant.title;
+          variantElement.dispatchEvent(new Event('change'))
           var moneyElement = document.querySelector('.price__current').querySelector('.money');
            moneyElement.textContent = `$${(price / 100).toFixed(2)}`;
         }, 100);
