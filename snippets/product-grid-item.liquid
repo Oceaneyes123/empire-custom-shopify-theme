@@ -416,7 +416,7 @@
           %}
         {%- endcapture -%}
       {% else %}
-        {% unless product.tags contains 'hide_price_and_atc' %}
+        {% if customer %}
           {%- capture product_item_price -%}
             {%
               render 'product-price',
@@ -434,7 +434,7 @@
               include_hidden_price: false
             %}
           {%- endcapture -%}
-        {% endunless %}
+        {% endif %}
       {% endif %}
 
       <div class="productitem--info">
@@ -627,7 +627,7 @@
               {% endif %}
             </div>
           {% else %}
-            {% if product.tags contains 'hide_price_and_atc' %}
+            {% unless customer %}
               <div class="productitem--actions" data-product-actions>
                 <div class="productitem--listview-price">
                   {{ product_item_price }}
@@ -746,7 +746,7 @@
                   </div>
                 {% endif %}
               </div>
-            {% endif %}
+            {% endunless %}
           {% endif %}
         {% endif %}
       {% endunless %}

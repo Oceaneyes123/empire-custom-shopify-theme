@@ -559,6 +559,17 @@
   <div class="product-form--atc">
     <div class="product-form__action-wrapper">
       
+      {% unless customer %}  
+        <div style="width:100%">
+          <a href="/account/login" style="text-decoration:none;">
+            <button class="see-the-price--btn productitem--action-atc button-primary product-form--atc-button" 
+              style="background-color: #f67522;border:0" type="button">
+              <span class="atc-button--text">See the Price</span>
+            </button>
+          </a>
+        </div>
+      {% endunless %}
+
       {% if customer %}
         {%
           render 'quantity-selector',
@@ -604,63 +615,6 @@
       
         {% if show_dynamic_checkout_button %}
           {{ form | payment_button }}
-        {% endif %}
-      {% else %}
-        {% if product.tags contains 'hide_price_and_atc' %}
-          <div style="width:100%">
-            <a href="/account/login" style="text-decoration:none;">
-              <button class="see-the-price--btn productitem--action-atc button-primary product-form--atc-button" 
-                style="background-color: #f67522;border:0" type="button">
-                <span class="atc-button--text">See the Price</span>
-              </button>
-            </a>
-          </div>
-        {% else %}
-          {%
-            render 'quantity-selector',
-            context: 'product',
-          %}
-    
-          {% assign variant_available = true %}
-          {% if selected_variant and selected_variant.available == false %}
-            {% assign variant_available = false %}
-          {% endif %}
-  
-          <button
-            class="
-              product-form--atc-button
-              {% if variant_available == false or product.available == false %}
-                disabled
-              {% endif %}
-            "
-            type="submit"
-            {% if variant_available == false or product.available == false %}
-              disabled
-            {% endif %}
-            data-product-atc
-            {% if product.template_suffix contains 'pre-order' %}
-              data-product-atc-preorder
-            {% endif %}
-          >
-            <span class="atc-button--text">
-              {% unless variant_available == false or product.available == false %}
-                {% if product.template_suffix contains 'pre-order' %}
-                  {{ 'product.buttons.pre_order' | t }}
-                {% else %}
-                  {{ 'product.buttons.add_to_cart' | t }}
-                {% endif %}
-              {% else %}
-                {{ 'product.buttons.sold_out' | t }}
-              {% endunless %}
-            </span>
-            <span class="atc-button--icon">
-              {%- render 'icon-spinner' -%}
-            </span>
-          </button>
-      
-          {% if show_dynamic_checkout_button %}
-            {{ form | payment_button }}
-          {% endif %}
         {% endif %}
       {% endif %}
       

@@ -429,26 +429,7 @@
                     include_hidden_price: true
                   %}
                 {% else %}
-                  {% if product.tags contains 'hide_price_and_atc' %}
-                     <!-- Show nothing here -->
-                  {% else %}
-                    {%
-                      render 'product-price',
-                      product: product,
-                      class_root: 'product',
-                      price: price,
-                      price_varies: false,
-                      compare_at_price: compare_at_price,
-                      compare_at_price_varies: false,
-                      on_sale: on_sale,
-                      emphasize_price: false,
-                      show_original: true,
-                      show_range: false,
-                      include_unit_price: true,
-                      include_tax_line: true,
-                      include_hidden_price: true
-                    %}
-                  {% endif %}
+                    <div></div>
                 {% endif %}
 
                 <form data-payment-terms-target style="display: none;"></form>
