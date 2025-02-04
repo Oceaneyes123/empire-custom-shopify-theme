@@ -91,15 +91,22 @@
     "product_cart_redirect": false,
     "show_breadcrumbs": true,
     "quickshop_show_vendor": true,
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "6987625696575125306": {
         "type": "shopify:\/\/apps\/weglot-translate-your-store\/blocks\/weglot\/3097482a-fafe-42ff-bc33-ea19e35c4a20",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
+      },
+      "8232603958289840080": {
+        "type": "shopify:\/\/apps\/seo-manager-venntov\/blocks\/seomanager-404\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": false,
+        "settings": {}
+      },
+      "17992116214976573926": {
+        "type": "shopify:\/\/apps\/seo-manager-venntov\/blocks\/seomanager\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
