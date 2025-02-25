@@ -13,7 +13,7 @@
   {%- endcapture -%}
 
   <script type="application/ld+json">
-    {
+     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
@@ -334,18 +334,17 @@
     {% endif %}
     {% if product.metafields.reviews.rating.value != blank %}
       "review": {
-        "@type": "Review",
+        "@type": "Review", 
           "reviewRating": {
           "@type": "Rating",
           "ratingValue": "{{ product.metafields.reviews.rating.value }}"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ product.metafields.reviews.rating.value }}",
-        "reviewCount": "{{ product.metafields.reviews.rating_count }}"
-      },
-    {% endif %}
+      }, 
+  "aggregateRating": {
+   "@type": "AggregateRating",
+   "ratingValue": "{{ product.metafields.reviews.rating.value | default: '5' }}",
+   "reviewCount": "{{ product.metafields.reviews.rating_count | default: '1' }}"
+},    {% endif %}
     "offers": {
       "@type": "Offer",
       "priceCurrency": {{ cart.currency.iso_code | json }},
@@ -366,7 +365,6 @@
   Store information
   https://developers.google.com/search/docs/data-types/sitename
 {% endcomment %}
-
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",

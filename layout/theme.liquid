@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
-  <head>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
 
@@ -104,7 +104,12 @@
     {% comment %}Inject theme-object end{% endcomment %}
 
     {% comment %} <script src="{{ 'custom.js' | asset_url }}" async></script> {% endcomment %}
-  </head>
+{% comment %}
+Added structured data snippet by Gary on [Feb 16,2025].  
+Moved structured data into its own snippet (`structured-data-gary.liquid`).  
+This ensures it doesn’t get erased when updating the theme.  
+{% endcomment %}
+{% render 'structured-data-gary' %}  </head>
 
   <body class="template-{{ template.name }}" data-instant-allow-query-string {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
     <script>
@@ -615,5 +620,24 @@
     </script>
     {% comment %} <script src="{{ 'custom.js' | asset_url }}" defer></script> {% endcomment %}
     <script>(function(n, v) {/* eslint-disable-next-line max-len */if (window.Shopify && window.Shopify.theme && navigator && navigator.sendBeacon && window.Shopify.designMode) {if (sessionStorage.getItem('oots_beacon')) return;navigator.sendBeacon('https://app.outofthesandbox.com/beacon', new URLSearchParams({shop_domain: window.Shopify.shop.toLowerCase(),shop_id: window.BOOMR.shopId,shop_email: '{{ shop.email }}',theme_name: n.toLowerCase(),theme_version: v.toLowerCase(),theme_store_id: window.Shopify.theme.theme_store_id,theme_id: window.Shopify.theme.id,theme_role: window.Shopify.theme.role,}));sessionStorage.setItem('oots_beacon', '');}}('empire','11.1.1'))</script>
-  </body>  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Backtrack",
+  "url": "http://backtrack.com",
+  "description": "Backtrack provides railway tools, parts, and accessories, offering innovative solutions for railroad construction and maintenance.",
+  "telephone": "1-888-744-7245",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "55 Corriveau Ave.",
+    "addressLocality": "St. Albert",
+    "addressRegion": "AB",
+    "postalCode": "T8N5A3",
+    "addressCountry": "CA"
+  },
+  "priceRange": "$$",
+ "image": "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/52217247742_3f24ed1ac0_c_5b0fba04-38ec-4820-b8ff-e26891cf5cab.jpg?v=1738344383"
+}
+</script>        </body>  
 </html>

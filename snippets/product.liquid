@@ -411,7 +411,7 @@
                   selected_variant: selected_variant,
                 %}
 
-              {% if customer %}
+              {% unless product.tags contains 'hide_price_and_atc' %}
                   {%
                     render 'product-price',
                     product: product,
@@ -430,7 +430,7 @@
                   %}
                 {% else %}
                     <div></div>
-                {% endif %}
+                {% endunless %}
 
                 <form data-payment-terms-target style="display: none;"></form>
               </div>

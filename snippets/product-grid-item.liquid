@@ -416,7 +416,7 @@
           %}
         {%- endcapture -%}
       {% else %}
-        {% if customer %}
+        {% unless product.tags contains 'hide_price_and_atc' %}
           {%- capture product_item_price -%}
             {%
               render 'product-price',
@@ -434,7 +434,7 @@
               include_hidden_price: false
             %}
           {%- endcapture -%}
-        {% endif %}
+        {% endunless %}
       {% endif %}
 
       <div class="productitem--info">
@@ -548,28 +548,30 @@
             {% assign quick_buy_classes = quick_buy_classes | append: ' disabled' %}
           {% endunless %}
       
-          {% if customer %}
-            <div class="productitem--actions" data-product-actions>
+          <div class="productitem--actions" data-product-actions>
+            {% if product.tags contains 'hide_price_and_atc' %}
               <div class="productitem--listview-price">
                 {{ product_item_price }}
               </div>
-      
-              <div class="productitem--listview-badge">
-                {%
-                  render 'product-badge',
-                  product: product,
-                  class_root: 'productitem',
-                  product_available: product_available,
-                  price: price,
-                  price_varies: price_varies,
-                  compare_at_price: compare_at_price,
-                  compare_at_price_varies: compare_at_price_varies,
-                  on_sale: on_sale,
-                  show_saved: consistent_saved,
-                  include_range: true,
-                %}
-              </div>
-      
+            {% endif %}
+    
+            <div class="productitem--listview-badge">
+              {%
+                render 'product-badge',
+                product: product,
+                class_root: 'productitem',
+                product_available: product_available,
+                price: price,
+                price_varies: price_varies,
+                compare_at_price: compare_at_price,
+                compare_at_price_varies: compare_at_price_varies,
+                on_sale: on_sale,
+                show_saved: consistent_saved,
+                include_range: true,
+              %}
+            </div>
+    
+            {% if customer %}
               {% if enable_quickshop %}
                 <div
                   class="
@@ -625,30 +627,8 @@
                   </button>
                 </div>
               {% endif %}
-            </div>
-          {% else %}
-            {% unless customer %}
-              <div class="productitem--actions" data-product-actions>
-                <div class="productitem--listview-price">
-                  {{ product_item_price }}
-                </div>
-      
-                <div class="productitem--listview-badge">
-                  {%
-                    render 'product-badge',
-                    product: product,
-                    class_root: 'productitem',
-                    product_available: product_available,
-                    price: price,
-                    price_varies: price_varies,
-                    compare_at_price: compare_at_price,
-                    compare_at_price_varies: compare_at_price_varies,
-                    on_sale: on_sale,
-                    show_saved: consistent_saved,
-                    include_range: true,
-                  %}
-                </div>
-      
+            {% else %}
+              {% if product.tags contains 'hide_price_and_atc' %}
                 <div
                   class="
                     productitem--action
@@ -656,40 +636,18 @@
                     {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
                   "
                 >
-                  <a href="/account/login" style="text-decoration: none;">
-                    <button
-                      class="productitem--action-trigger button-primary"
-                      type="button"
-                    >
-                      <span class="atc-button--text">
-                        See the Price
-                      </span>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            {% else %}
-              <div class="productitem--actions" data-product-actions>
-                <div class="productitem--listview-price">
-                  {{ product_item_price }}
-                </div>
-      
-                <div class="productitem--listview-badge">
-                  {%
-                    render 'product-badge',
-                    product: product,
-                    class_root: 'productitem',
-                    product_available: product_available,
-                    price: price,
-                    price_varies: price_varies,
-                    compare_at_price: compare_at_price,
-                    compare_at_price_varies: compare_at_price_varies,
-                    on_sale: on_sale,
-                    show_saved: consistent_saved,
-                    include_range: true,
-                  %}
-                </div>
-      
+                    <a href="/account/login" style="text-decoration: none;">
+                      <button
+                        class="productitem--action-trigger button-primary"
+                        type="button"
+                      >
+                        <span class="atc-button--text">
+                          See the Price
+                        </span>
+                      </button>
+                    </a>
+                  </div>
+              {% else %}
                 {% if enable_quickshop %}
                   <div
                     class="
@@ -713,8 +671,6 @@
                     </button>
                   </div>
                 {% endif %}
-      
-                {% if atc_button %}
                   <div
                     class="
                       productitem--action
@@ -744,10 +700,10 @@
                       </span>
                     </button>
                   </div>
-                {% endif %}
-              </div>
-            {% endunless %}
-          {% endif %}
+              {% endif %}
+            {% endif %}
+            
+          </div>
         {% endif %}
       {% endunless %}
     </div>

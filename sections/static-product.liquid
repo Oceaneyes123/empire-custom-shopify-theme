@@ -40,15 +40,14 @@
 </script>
 
 {% render 'breadcrumbs' %}
-
+{% render  'structured-data' %}
 <section
   class="
     product__container
     product__container--two-columns
   "
   data-product-wrapper
->
-  {%
+>  {%
     render 'product',
     is_product_modal: false,
     show_dynamic_checkout_button: settings.show_dynamic_checkout_button,
@@ -617,7 +616,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "paragraph",
+          "type": "paragraph", 
           "content": "t:sections.product.blocks.request_quote.paragraph_1.content"
         },
         {
