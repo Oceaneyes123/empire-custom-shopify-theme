@@ -150,14 +150,97 @@ let productViewPageRegex = /^.*\/products\/.*$/;
    
 // }
 
+// function seePriceLogin() {
+//     window.location.href = '/account/login';
+// }
 
+// function openContactUs() {
+//     window.location.href = '/pages/contact';
+// }
 
+const locations = [
+    {
+      "name": "Calgary",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.039268029768!2d-113.9721757!3d50.9969465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717a3ff80d1c5b%3A0x52d8421036f8f931!2sBacktrack%20Railway%20Services%20Ltd.!5e0!3m2!1sen!2sph!4v1742805783319!5m2!1sen!2sph",
+      "width": "100%",
+      "height": "450",
+      "style": "border:0;",
+      "allowfullscreen": "",
+      "loading": "lazy",
+      "referrerpolicy": "no-referrer-when-downgrade"
+    },
+    {
+      "name": "Kamloops",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2527.923267487648!2d-120.3273702!3d50.6842493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537e2b81fe340001%3A0xd70234a1fcddd95c!2sBacktrack%20Railway%20Services%20Ltd.!5e0!3m2!1sen!2sph!4v1742805984599!5m2!1sen!2sph",
+      "width": "100%",
+      "height": "450",
+      "style": "border:0;",
+      "allowfullscreen": "",
+      "loading": "lazy",
+      "referrerpolicy": "no-referrer-when-downgrade"
+    },
+    {
+      "name": "Edmonton",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2365.2479451218055!2d-113.57171299999999!3d53.642551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a025a571879163%3A0x54d88fc3e72f31c8!2sBacktrack%20Railway%20Services%20Ltd.!5e0!3m2!1sen!2sph!4v1742806173950!5m2!1sen!2sph",
+      "width": "100%",
+      "height": "450",
+      "style": "border:0;",
+      "allowfullscreen": "",
+      "loading": "lazy",
+      "referrerpolicy": "no-referrer-when-downgrade"
+    },
+    {
+      "name": "Toronto",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.5312246293447!2d-79.5319529!3d43.8033394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2fa10be71a13%3A0x3a6c5006d5b8bd!2sBacktrack%20Railway%20Services%20Ltd.!5e0!3m2!1sen!2sph!4v1743501159163!5m2!1sen!2sph",
+      "width": "100%",
+      "height": "450",
+      "style": "border:0;",
+      "allowfullscreen": "",
+      "loading": "lazy",
+      "referrerpolicy": "no-referrer-when-downgrade"
+    },
+    {
+      "name": "Winnipeg",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.9771261563583!2d-96.9710939!3d49.9180042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea726e6255faf3%3A0xe69c95002eeae95d!2sBacktrack%20Railway%20Services%20Ltd.!5e0!3m2!1sen!2sph!4v1742808333612!5m2!1sen!2sph",
+      "width": "100%",
+      "height": "450",
+      "style": "border:0;",
+      "allowfullscreen": "",
+      "loading": "lazy",
+      "referrerpolicy": "no-referrer-when-downgrade"
+    }
+]
 
+document.addEventListener('DOMContentLoaded', function() {
+    var storefrontSelect = document.getElementById('storefrontLocation');
+    if (storefrontSelect) {
+      var savedLocation = localStorage.getItem('storefrontLocation') || 'Calgary';
+      storefrontSelect.value = savedLocation;
+      updateStorefrontMap(savedLocation);
+      
+      storefrontSelect.addEventListener('change', function() {
+        localStorage.setItem('storefrontLocation', this.value);
+        updateStorefrontMap(this.value);
+      });
+    }
+    
+    function updateStorefrontMap(selectedName) {
+      let selected = locations.find(loc => loc.name === selectedName);
+      let mapContainer = document.getElementById('storefrontMap');
+      if (mapContainer) {
+        mapContainer.innerHTML = '';
+        if (selected) {
+          let iframe = document.createElement('iframe');
+          iframe.src = selected.src;
+          iframe.width = selected.width;
+          iframe.height = selected.height;
+          iframe.style.cssText = selected.style;
+          iframe.setAttribute('allowfullscreen', selected.allowfullscreen);
+          iframe.loading = selected.loading;
+          iframe.referrerPolicy = selected.referrerpolicy;
+          mapContainer.appendChild(iframe);
+        }
+      }
+    }
+});
 
-function seePriceLogin() {
-    window.location.href = '/account/login';
-}
-
-function openContactUs() {
-    window.location.href = '/pages/contact';
-}
