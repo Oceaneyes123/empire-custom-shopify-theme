@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "dynamic_html_LK4B79": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<!-- Case and Inquiry Section -->\n<section class=\"case-inquiry-section\">\n  <div class=\"case-inquiry-container\">\n    \n    <!-- Submit a Case -->\n    <div class=\"case-box\">\n      <h3 class=\"contact-header\">Submit a Case<\/h3>\n      <p>If you're facing an issue or need support, use the button below to submit a case and our team will assist you shortly.<\/p>\n      <a href=\"https:\/\/7264857.extforms.netsuite.com\/app\/site\/crm\/externalcasepage.nl?compid=7264857&amp;formid=7&amp;h=AAFdikaIKkjF_Do3_vbrZj4WfBKf2KYbFY0qxtHNEXE_F5rbuK8\" target=\"_blank\" class=\"case-btn\">Submit a Case<\/a>\n    <\/div>\n\n    <!-- General Inquiries -->\n    <div class=\"case-box\">\n      <h3 class=\"contact-header\">General Inquiries<\/h3>\n      <p>Have general questions or want to reach out? Contact us using the link below and we’ll get back to you soon.<\/p>\n      <a href=\"\/pages\/contact\" class=\"case-btn\">Contact Page<\/a>\n    <\/div>\n\n  <\/div>\n<\/section>\n\n<style>\n  .case-inquiry-section {\n    padding: 60px 20px;\n    background-color: #0B213E;\n  }\n\n  .case-inquiry-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 40px;\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .case-box {\n    flex: 1;\n    min-width: 300px;\n    border-radius: 12px;\n    padding: 30px;\n    background-color: #162a4a;\n    color: white;\n    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);\n    transition: background-color 0.3s ease;\n  }\n\n  .case-box:hover {\n    background-color: #1f3358;\n  }\n\n  .case-box h3 {\n    margin-top: 0;\n    font-size: 1.6rem;\n  }\n\n  .case-box p {\n    font-size: 1rem;\n    margin: 16px 0 24px;\n    line-height: 1.5;\n  }\n\n  .case-btn {\n    display: inline-block;\n    padding: 12px 24px;\n    background-color: #F57523;\n    color: white !important;\n    text-decoration: none;\n    border-radius: 8px;\n    font-size: 1rem;\n    transition: background 0.3s ease;\n  }\n\n  .case-btn:hover {\n    background-color: #d65e14;\n  }\n\n  .contact-header{\n    color: white !important;\n  }\n\n  @media (max-width: 768px) {\n    .case-inquiry-container {\n      flex-direction: column;\n    }\n  }\n<\/style>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dynamic_html_LK4B79"
+  ]
+}
