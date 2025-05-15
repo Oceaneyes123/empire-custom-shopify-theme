@@ -411,7 +411,7 @@
                   selected_variant: selected_variant,
                 %}
 
-              {% unless product.tags contains 'hide_price_and_atc' %}
+              {% unless product.tags contains 'hide_price_and_atc' and customer == nil %}
                   {%
                     render 'product-price',
                     product: product,

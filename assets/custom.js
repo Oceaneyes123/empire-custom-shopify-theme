@@ -36,7 +36,9 @@ const locations = [
     hours: [
       "Monday to Friday: 8:00-4:00",
       "Saturday and Sunday: Closed"
-    ]
+    ],
+    placeID: "ChIJWxwN-D96cVMRMfn4NhBC2FI",
+    profileID: "13684662485077448544"
   },
   {
     name: "Kamloops",
@@ -56,7 +58,9 @@ const locations = [
     hours: [
       "Monday to Friday: 8:00-4:00",
       "Saturday and Sunday: Closed"
-    ]
+    ],
+    placeID: "ChIJAQA0_oErflMRXNnd_KE0Atc",
+    profileID: "16231699396510810475"
   },
   {
     name: "Edmonton",
@@ -78,7 +82,9 @@ const locations = [
       "Tuesday to Friday: 8:00-5:00",
       "Saturday: 10:00-2:00",
       "Sunday: Closed"
-    ]
+    ],
+    placeID: "ChIJc-ChIJAQA0_oErflMRXNnd_KE0Atc",
+    profileID: "7513797813009368832"
   },
   {
     name: "Toronto",
@@ -98,7 +104,9 @@ const locations = [
     hours: [
       "Monday to Friday: 8:00-4:00",
       "Saturday and Sunday: Closed"
-    ]
+    ],
+    placeID: "ChIJExrnC6EvK4gRvbjVBlBsOgA",
+    profileID: "5146561405530466952"
   },
   {
     name: "Winnipeg",
@@ -118,7 +126,9 @@ const locations = [
     hours: [
       "Monday to Friday: 8:00-4:00",
       "Saturday and Sunday: Closed"
-    ]
+    ],
+    placeID: "ChIJ8_pVYm5y6lIRXenqLgCVnOY",
+    profileID: "8355840561432144503"
   }
 ];
 
@@ -188,7 +198,17 @@ document.addEventListener('DOMContentLoaded', function() {
         detailsHtml = detailsHtml.replace('</p>\n      <div class="btn-wrapper">', `</p>\n      ${hoursHtml}\n      <div class="btn-wrapper">`);
         storeDetails.innerHTML = detailsHtml;
       }
+      // Fetch Google reviews for the selected location
+      if (selected && selected.placeID) {
+        fetch(`http://127.0.0.1:3001/api/place-details?placeId=${selected.placeID}`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(`Data for ${selected.name}:`, data);
+            if (data.result && data.result.reviews) {
+              console.log(`Reviews for ${selected.name}:`, data.result.reviews);
+              // You can display reviews here if needed
+            }
+          });
+      }
     }
-    
-});
-
+  });

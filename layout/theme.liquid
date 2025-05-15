@@ -48,9 +48,7 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {% if settings.favicon != blank %}
-      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-    {% endif %}
+    <link rel="shortcut icon" href="{{ 'logo.png' | asset_url }}" type="image/jpeg">
 
     {% if template contains 'collection' and current_tags %}
       <meta name="robots" content="noindex" />
