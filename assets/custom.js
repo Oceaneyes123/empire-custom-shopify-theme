@@ -200,13 +200,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       // Fetch Google reviews for the selected location
       if (selected && selected.placeID) {
-        fetch(`http://127.0.0.1:3001/api/place-details?placeId=${selected.placeID}`)
+        fetch(`https://backtrack-api-coa2.onrender.com/api/place-details?placeId=${selected.placeID}`)
           .then(res => res.json())
           .then(data => {
             console.log(`Data for ${selected.name}:`, data);
             if (data.result && data.result.reviews) {
               console.log(`Reviews for ${selected.name}:`, data.result.reviews);
-              // You can display reviews here if needed
             }
           });
       }
