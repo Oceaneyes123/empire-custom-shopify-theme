@@ -263,8 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const reviewCardsContainer = document.createElement('div');
       reviewCardsContainer.className = 'review-cards-container';
-      reviewsWrapper.appendChild(reviewCardsContainer);
-
+      reviewsWrapper.appendChild(reviewCardsContainer);      
       function renderReviewCards() {
         reviewCardsContainer.innerHTML = '';
         const visibleReviews = reviewsToShow.slice(currentIndex, currentIndex + maxDisplay);
@@ -284,23 +283,19 @@ document.addEventListener('DOMContentLoaded', function() {
           `;
           reviewCardsContainer.appendChild(reviewCard);
         });
-      }
 
+        // Update button visibility
+        const prevBtn = reviewsWrapper.querySelector('.review-prev');
+        const nextBtn = reviewsWrapper.querySelector('.review-next');
+        if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'block' : 'none';
+        if (nextBtn) nextBtn.style.display = currentIndex + maxDisplay < reviewsToShow.length ? 'block' : 'none';
+      }
       if (reviewsToShow.length > maxDisplay) {
         const prevButton = document.createElement('button');
         prevButton.className = 'review-nav review-prev';
         prevButton.innerHTML = '&#10094;';
         prevButton.onclick = () => {
-          currentIndex = (currentIndex - maxDisplay + reviewsToShow.length) % reviewsToShow.length;
-          // Ensure currentIndex doesn't go out of bounds when moving backward
-          if (currentIndex > reviewsToShow.length - maxDisplay && reviewsToShow.length % maxDisplay !== 0) {
-             currentIndex = Math.max(0, reviewsToShow.length - maxDisplay);
-          } else if (reviewsToShow.length % maxDisplay === 0 && currentIndex !==0) {
-            // do nothing
-          }
-           else if (currentIndex + maxDisplay > reviewsToShow.length) {
-            currentIndex = Math.max(0, reviewsToShow.length - maxDisplay);
-          }
+          currentIndex = Math.max(0, currentIndex - maxDisplay);
           renderReviewCards();
         };
 
@@ -308,12 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nextButton.className = 'review-nav review-next';
         nextButton.innerHTML = '&#10095;';
         nextButton.onclick = () => {
-          currentIndex = (currentIndex + maxDisplay) % reviewsToShow.length;
-          if (currentIndex === 0 && reviewsToShow.length > maxDisplay) {
-            if (reviewsToShow.length % maxDisplay !==0 && currentIndex + maxDisplay > reviewsToShow.length) {
-                 // do nothing
-            }
-          }
+          currentIndex = Math.min(reviewsToShow.length - maxDisplay, currentIndex + maxDisplay);
           renderReviewCards();
         };
         reviewsWrapper.appendChild(prevButton);
@@ -327,10 +317,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!document.getElementById('reviews-style')) {
         const style = document.createElement('style');
         style.id = 'reviews-style';
-        style.innerHTML = `
-          .reviews-wrapper {
+        style.innerHTML = 
+        `.reviews-wrapper {
             position: relative;
             margin-top: 20px;
+            margin-bottom: 40px;
           }
           .review-cards-container {
             display: flex;
