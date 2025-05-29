@@ -38,7 +38,8 @@ const locations = [
       "Saturday and Sunday: Closed"
     ],
     placeID: "ChIJWxwN-D96cVMRMfn4NhBC2FI",
-    profileID: "13684662485077448544"
+    profileID: "13684662485077448544",
+    image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Calgary.jpg?v=1748517012"
   },
   {
     name: "Kamloops",
@@ -60,7 +61,8 @@ const locations = [
       "Saturday and Sunday: Closed"
     ],
     placeID: "ChIJAQA0_oErflMRXNnd_KE0Atc",
-    profileID: "16231699396510810475"
+    profileID: "16231699396510810475",
+    image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Kamloops.jpg?v=1748517010"
   },
   {
     name: "Edmonton",
@@ -84,7 +86,8 @@ const locations = [
       "Sunday: Closed"
     ],
     placeID: "ChIJc-ChIJAQA0_oErflMRXNnd_KE0Atc",
-    profileID: "7513797813009368832"
+    profileID: "7513797813009368832",
+    image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Edmonton.jpg?v=1748517012"
   },
   {
     name: "Toronto",
@@ -106,7 +109,8 @@ const locations = [
       "Saturday and Sunday: Closed"
     ],
     placeID: "ChIJExrnC6EvK4gRvbjVBlBsOgA",
-    profileID: "5146561405530466952"
+    profileID: "5146561405530466952",
+    image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Toronto.jpg?v=1748517012"
   },
   {
     name: "Winnipeg",
@@ -128,12 +132,19 @@ const locations = [
       "Saturday and Sunday: Closed"
     ],
     placeID: "ChIJ8_pVYm5y6lIRXenqLgCVnOY",
-    profileID: "8355840561432144503"
+    profileID: "8355840561432144503",
+    image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Winnipeg.jpg?v=1748517011"
   }
 ];
 
 
 document.addEventListener('DOMContentLoaded', function() {
+  locations.forEach(location => {
+    if (location.image) {
+      const img = new Image();
+      img.src = location.image;
+    }
+  });
 
   //add another div as a child of .site-footer-block-menu
   var footerMenu = document.querySelector('.site-footer-block-menu');
@@ -148,13 +159,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var storefrontSelect = document.getElementById('storefrontLocation');
     if (storefrontSelect) {
       var savedLocation = localStorage.getItem('storefrontLocation') || 'Calgary';
-      storefrontSelect.value = savedLocation;
-
-      // Insert default Calgary contact section
+      storefrontSelect.value = savedLocation;      // Insert default Calgary contact section
       let storeDetails = document.getElementById('storeDetails');
       if (storeDetails) {
         storeDetails.innerHTML = contactSection;
         updateStorefrontMap(savedLocation);
+        
+        // Set initial hero background
+        const defaultLocation = locations.find(loc => loc.name === savedLocation);
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection && defaultLocation && defaultLocation.image) {
+          heroSection.style.backgroundImage = `url('${defaultLocation.image}')`;
+          heroSection.style.backgroundSize = 'cover';
+          heroSection.style.backgroundPosition = 'center';
+          heroSection.style.backgroundRepeat = 'no-repeat';
+        }
       }
       
       storefrontSelect.addEventListener('change', function() {
@@ -181,9 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
           iframe.referrerPolicy = selected.referrerpolicy;
           mapContainer.appendChild(iframe);
         }
-      }
-
-      if (storeDetails && selected) {
+      }      if (storeDetails && selected) {
         let detailsHtml = contactSection.replace('123 Street, City, Country', selected.address)
           .replace('+1 234 567 890', selected.phone.join(' / '));
         // Insert hours inside the contact-box, right after phone
@@ -198,16 +215,226 @@ document.addEventListener('DOMContentLoaded', function() {
         detailsHtml = detailsHtml.replace('</p>\n      <div class="btn-wrapper">', `</p>\n      ${hoursHtml}\n      <div class="btn-wrapper">`);
         storeDetails.innerHTML = detailsHtml;
       }
+
+      // Update hero section background
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection && selected && selected.image) {
+        heroSection.style.backgroundImage = `url('${selected.image}')`;
+        heroSection.style.backgroundSize = 'cover';
+        heroSection.style.backgroundPosition = 'center';
+        heroSection.style.backgroundRepeat = 'no-repeat';
+      }
       // Fetch Google reviews for the selected location
       if (selected && selected.placeID) {
         fetch(`https://backtrack-api-coa2.onrender.com/api/place-details?placeId=${selected.placeID}`)
           .then(res => res.json())
           .then(data => {
             console.log(`Data for ${selected.name}:`, data);
-            if (data.result && data.result.reviews) {
-              console.log(`Reviews for ${selected.name}:`, data.result.reviews);
+            const storeReviewsContainer = document.getElementById('storeReviews');
+            if (storeReviewsContainer) {
+              storeReviewsContainer.innerHTML = '';
+              if (data.result && data.result.reviews && data.result.reviews.length > 0) {
+                console.log(`Reviews for ${selected.name}:`, data.result.reviews);
+                displayReviews(data.result.reviews, storeReviewsContainer);
+              } else {
+                storeReviewsContainer.innerHTML = '<p>No reviews available for this location.</p>';
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching reviews:', error);
+            const storeReviewsContainer = document.getElementById('storeReviews');
+            if (storeReviewsContainer) {
+              storeReviewsContainer.innerHTML = '<p>Could not load reviews at this time.</p>';
             }
           });
+      }
+    }
+
+    function displayReviews(reviews, container) {
+      container.innerHTML = ''; // Clear existing content
+
+      const reviewsToShow = reviews;
+      let currentIndex = 0;
+      const maxDisplay = 4;
+
+      const reviewsWrapper = document.createElement('div');
+      reviewsWrapper.className = 'reviews-wrapper';
+
+      const reviewCardsContainer = document.createElement('div');
+      reviewCardsContainer.className = 'review-cards-container';
+      reviewsWrapper.appendChild(reviewCardsContainer);
+
+      function renderReviewCards() {
+        reviewCardsContainer.innerHTML = '';
+        const visibleReviews = reviewsToShow.slice(currentIndex, currentIndex + maxDisplay);
+
+        visibleReviews.forEach(review => {
+          const reviewCard = document.createElement('div');
+          reviewCard.className = 'review-card';
+          reviewCard.innerHTML = `
+            <div class="review-author">
+              <img src="${review.profile_photo_url}" alt="${review.author_name}" class="review-author-img">
+              <strong>${review.author_name}</strong>
+            </div>
+            <div class="review-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+            <p class="review-text">${review.text}</p>
+            <a href="${review.author_url}" target="_blank" class="review-link">Read full review</a>
+            <p class="review-time">${review.relative_time_description}</p>
+          `;
+          reviewCardsContainer.appendChild(reviewCard);
+        });
+      }
+
+      if (reviewsToShow.length > maxDisplay) {
+        const prevButton = document.createElement('button');
+        prevButton.className = 'review-nav review-prev';
+        prevButton.innerHTML = '&#10094;';
+        prevButton.onclick = () => {
+          currentIndex = (currentIndex - maxDisplay + reviewsToShow.length) % reviewsToShow.length;
+          // Ensure currentIndex doesn't go out of bounds when moving backward
+          if (currentIndex > reviewsToShow.length - maxDisplay && reviewsToShow.length % maxDisplay !== 0) {
+             currentIndex = Math.max(0, reviewsToShow.length - maxDisplay);
+          } else if (reviewsToShow.length % maxDisplay === 0 && currentIndex !==0) {
+            // do nothing
+          }
+           else if (currentIndex + maxDisplay > reviewsToShow.length) {
+            currentIndex = Math.max(0, reviewsToShow.length - maxDisplay);
+          }
+          renderReviewCards();
+        };
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'review-nav review-next';
+        nextButton.innerHTML = '&#10095;';
+        nextButton.onclick = () => {
+          currentIndex = (currentIndex + maxDisplay) % reviewsToShow.length;
+          if (currentIndex === 0 && reviewsToShow.length > maxDisplay) {
+            if (reviewsToShow.length % maxDisplay !==0 && currentIndex + maxDisplay > reviewsToShow.length) {
+                 // do nothing
+            }
+          }
+          renderReviewCards();
+        };
+        reviewsWrapper.appendChild(prevButton);
+        reviewsWrapper.appendChild(nextButton);
+      }
+      container.appendChild(reviewsWrapper);
+      renderReviewCards();
+
+
+      // Add CSS for reviews
+      if (!document.getElementById('reviews-style')) {
+        const style = document.createElement('style');
+        style.id = 'reviews-style';
+        style.innerHTML = `
+          .reviews-wrapper {
+            position: relative;
+            margin-top: 20px;
+          }
+          .review-cards-container {
+            display: flex;
+            gap: 15px;
+            overflow: hidden; /* Hide reviews that don't fit */
+            justify-content: center; /* Center cards if fewer than maxDisplay */
+          }
+          .review-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            width: calc(25% - 15px); /* Adjust width for 4 cards with gap */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-width: 200px; /* Minimum width for smaller screens */
+          }
+          .review-author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+          .review-author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          .review-rating {
+            color: #f8c102; /* Gold color for stars */
+            margin-bottom: 5px;
+          }
+          .review-text {
+            font-size: 0.9em;
+            color: #555;
+            flex-grow: 1; /* Make text take available space */
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Show max 4 lines */
+            -webkit-box-orient: vertical;
+          }
+          .review-link {
+            font-size: 0.8em;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 5px;
+          }
+          .review-link:hover {
+            text-decoration: underline;
+          }
+          .review-time {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: auto; /* Push time to the bottom */
+          }
+          .review-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            font-size: 18px;
+            line-height: 1;
+          }
+          .review-prev {
+            left: -5px;
+          }
+          .review-next {
+            right: -5px;
+          }
+          @media (max-width: 992px) { /* Adjust for smaller screens */
+            .review-card {
+              width: calc(50% - 10px); /* 2 cards per row */
+            }
+          }
+          @media (max-width: 576px) { /* Adjust for very small screens */
+            .review-card {
+              width: 100%; /* 1 card per row */
+            }
+            .review-nav { /* Adjust nav button position for single card view */
+              top: auto;
+              bottom: -40px;
+              transform: none;
+            }
+            .review-prev {
+              left: 35%;
+            }
+            .review-next {
+              right: 35%;
+            }
+            .reviews-wrapper {
+              padding-bottom: 50px; /* Space for nav buttons */
+            }
+          }
+        `;
+        document.head.appendChild(style);
       }
     }
   });

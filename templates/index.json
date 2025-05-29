@@ -62,7 +62,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div id=\"storefrontMap\">\n<\/div>\n<div id=\"storeDetails\">\n<\/div>"
+        "custom_html": "<div id=\"storefrontMap\">\n<\/div>\n<div id=\"storeReviews\">\n<\/div>\n<div id=\"storeDetails\">\n<\/div>"
       }
     },
     "dynamic_rich_text_A8Hiw4": {
