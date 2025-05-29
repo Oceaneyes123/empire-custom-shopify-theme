@@ -164,12 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (storeDetails) {
         storeDetails.innerHTML = contactSection;
         updateStorefrontMap(savedLocation);
-        
-        // Set initial hero background
+          // Set initial hero background
         const defaultLocation = locations.find(loc => loc.name === savedLocation);
         const heroSection = document.querySelector('.hero-section');
         if (heroSection && defaultLocation && defaultLocation.image) {
-          heroSection.style.backgroundImage = `url('${defaultLocation.image}')`;
+          heroSection.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('${defaultLocation.image}')`;
           heroSection.style.backgroundSize = 'cover';
           heroSection.style.backgroundPosition = 'center';
           heroSection.style.backgroundRepeat = 'no-repeat';
@@ -214,12 +213,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const hoursHtml = `<p><strong>Hours:</strong><br>${selected.hours.map(h => `<span class='hours-indent'>${h}</span>`).join('')}</p>`;
         detailsHtml = detailsHtml.replace('</p>\n      <div class="btn-wrapper">', `</p>\n      ${hoursHtml}\n      <div class="btn-wrapper">`);
         storeDetails.innerHTML = detailsHtml;
-      }
-
-      // Update hero section background
+      }      // Update hero section background
       const heroSection = document.querySelector('.hero-section');
       if (heroSection && selected && selected.image) {
-        heroSection.style.backgroundImage = `url('${selected.image}')`;
+        heroSection.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('${selected.image}')`;
         heroSection.style.backgroundSize = 'cover';
         heroSection.style.backgroundPosition = 'center';
         heroSection.style.backgroundRepeat = 'no-repeat';
