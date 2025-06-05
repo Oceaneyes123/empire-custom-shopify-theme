@@ -85,7 +85,7 @@ const locations = [
       "Saturday: 10:00-2:00",
       "Sunday: Closed"
     ],
-    placeID: "ChIJc-ChIJAQA0_oErflMRXNnd_KE0Atc",
+    placeID: "ChIJY5GHcaUloFMRyDEv58OP2FQ",
     profileID: "7513797813009368832",
     image: "https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Edmonton.jpg?v=1748517012"
   },
@@ -174,9 +174,14 @@ document.addEventListener('DOMContentLoaded', function() {
           heroSection.style.backgroundRepeat = 'no-repeat';
         }
       }
-      
       storefrontSelect.addEventListener('change', function() {
         localStorage.setItem('storefrontLocation', this.value);
+        
+        if (window.location.pathname !== '/' && window.location.pathname !== '') {
+          window.location.href = '/';
+          return;
+        }
+        
         updateStorefrontMap(this.value);
       });
     }
