@@ -146,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  //add another div as a child of .site-footer-block-menu
   var footerMenu = document.querySelector('.site-footer-block-menu');
   if (footerMenu) {
     var newDiv = document.createElement('div');
@@ -155,17 +154,14 @@ document.addEventListener('DOMContentLoaded', function() {
     newDiv.innerHTML = '<a href="/pages/support" style="color:#fff; text-decoration:none; cursor:pointer;">Contact Support</a>';
     footerMenu.appendChild(newDiv);
   }
-  //ADD MAP OF STOREFRONTS
     var storefrontSelect = document.getElementById('storefrontLocation');
     if (storefrontSelect) {
       var savedLocation = localStorage.getItem('storefrontLocation') || 'Calgary';
-      storefrontSelect.value = savedLocation;      // Insert default Calgary contact section
-      let storeDetails = document.getElementById('storeDetails');
+      storefrontSelect.value = savedLocation;      let storeDetails = document.getElementById('storeDetails');
       if (storeDetails) {
         storeDetails.innerHTML = contactSection;
         updateStorefrontMap(savedLocation);
-          // Set initial hero background
-        const defaultLocation = locations.find(loc => loc.name === savedLocation);
+          const defaultLocation = locations.find(loc => loc.name === savedLocation);
         const heroSection = document.querySelector('.hero-section');
         if (heroSection && defaultLocation && defaultLocation.image) {
           heroSection.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('${defaultLocation.image}')`;
@@ -207,8 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }      if (storeDetails && selected) {
         let detailsHtml = contactSection.replace('123 Street, City, Country', selected.address)
           .replace('+1 234 567 890', selected.phone.join(' / '));
-        // Insert hours inside the contact-box, right after phone
-        // Add style for indentation if not present
         if (!document.getElementById('hours-indent-style')) {
           const style = document.createElement('style');
           style.id = 'hours-indent-style';
@@ -218,25 +212,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const hoursHtml = `<p><strong>Hours:</strong><br>${selected.hours.map(h => `<span class='hours-indent'>${h}</span>`).join('')}</p>`;
         detailsHtml = detailsHtml.replace('</p>\n      <div class="btn-wrapper">', `</p>\n      ${hoursHtml}\n      <div class="btn-wrapper">`);
         storeDetails.innerHTML = detailsHtml;
-      }      // Update hero section background
-      const heroSection = document.querySelector('.hero-section');
+      }      const heroSection = document.querySelector('.hero-section');
       if (heroSection && selected && selected.image) {
         heroSection.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('${selected.image}')`;
         heroSection.style.backgroundSize = 'cover';
         heroSection.style.backgroundPosition = 'center';
         heroSection.style.backgroundRepeat = 'no-repeat';
       }
-      // Fetch Google reviews for the selected location
       if (selected && selected.placeID) {
         fetch(`https://backtrack-api-coa2.onrender.com/api/place-details?placeId=${selected.placeID}`)
           .then(res => res.json())
           .then(data => {
-            console.log(`Data for ${selected.name}:`, data);
             const storeReviewsContainer = document.getElementById('storeReviews');
             if (storeReviewsContainer) {
               storeReviewsContainer.innerHTML = '';
               if (data.result && data.result.reviews && data.result.reviews.length > 0) {
-                console.log(`Reviews for ${selected.name}:`, data.result.reviews);
                 displayReviews(data.result.reviews, storeReviewsContainer);
               } else {
                 storeReviewsContainer.innerHTML = '<p>No reviews available for this location.</p>';
@@ -244,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           })
           .catch(error => {
-            console.error('Error fetching reviews:', error);
             const storeReviewsContainer = document.getElementById('storeReviews');
             if (storeReviewsContainer) {
               storeReviewsContainer.innerHTML = '<p>Could not load reviews at this time.</p>';
@@ -254,22 +243,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayReviews(reviews, container) {
-      container.innerHTML = ''; // Clear existing content
-
+      container.innerHTML = '';
       const reviewsToShow = reviews;
       let currentIndex = 0;
       const maxDisplay = 4;
-
       const reviewsWrapper = document.createElement('div');
       reviewsWrapper.className = 'reviews-wrapper';
-
       const reviewCardsContainer = document.createElement('div');
       reviewCardsContainer.className = 'review-cards-container';
       reviewsWrapper.appendChild(reviewCardsContainer);      
       function renderReviewCards() {
         reviewCardsContainer.innerHTML = '';
         const visibleReviews = reviewsToShow.slice(currentIndex, currentIndex + maxDisplay);
-
         visibleReviews.forEach(review => {
           const reviewCard = document.createElement('div');
           reviewCard.className = 'review-card';
@@ -285,8 +270,6 @@ document.addEventListener('DOMContentLoaded', function() {
           `;
           reviewCardsContainer.appendChild(reviewCard);
         });
-
-        // Update button visibility
         const prevBtn = reviewsWrapper.querySelector('.review-prev');
         const nextBtn = reviewsWrapper.querySelector('.review-next');
         if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'block' : 'none';
@@ -300,7 +283,6 @@ document.addEventListener('DOMContentLoaded', function() {
           currentIndex = Math.max(0, currentIndex - maxDisplay);
           renderReviewCards();
         };
-
         const nextButton = document.createElement('button');
         nextButton.className = 'review-nav review-next';
         nextButton.innerHTML = '&#10095;';
@@ -313,9 +295,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       container.appendChild(reviewsWrapper);
       renderReviewCards();
-
-
-      // Add CSS for reviews
       if (!document.getElementById('reviews-style')) {
         const style = document.createElement('style');
         style.id = 'reviews-style';
@@ -328,19 +307,19 @@ document.addEventListener('DOMContentLoaded', function() {
           .review-cards-container {
             display: flex;
             gap: 15px;
-            overflow: hidden; /* Hide reviews that don't fit */
-            justify-content: center; /* Center cards if fewer than maxDisplay */
+            overflow: hidden;
+            justify-content: center;
           }
           .review-card {
             border: 1px solid #eee;
             border-radius: 8px;
             padding: 15px;
-            width: calc(25% - 15px); /* Adjust width for 4 cards with gap */
+            width: calc(25% - 15px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            min-width: 200px; /* Minimum width for smaller screens */
+            min-width: 200px;
           }
           .review-author {
             display: flex;
@@ -354,18 +333,18 @@ document.addEventListener('DOMContentLoaded', function() {
             margin-right: 10px;
           }
           .review-rating {
-            color: #f8c102; /* Gold color for stars */
+            color: #f8c102;
             margin-bottom: 5px;
           }
           .review-text {
             font-size: 0.9em;
             color: #555;
-            flex-grow: 1; /* Make text take available space */
+            flex-grow: 1;
             margin-bottom: 10px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 4; /* Show max 4 lines */
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
           }
           .review-link {
@@ -380,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .review-time {
             font-size: 0.8em;
             color: #777;
-            margin-top: auto; /* Push time to the bottom */
+            margin-top: auto;
           }
           .review-nav {
             position: absolute;
@@ -402,16 +381,16 @@ document.addEventListener('DOMContentLoaded', function() {
           .review-next {
             right: -5px;
           }
-          @media (max-width: 992px) { /* Adjust for smaller screens */
+          @media (max-width: 992px) {
             .review-card {
-              width: calc(50% - 10px); /* 2 cards per row */
+              width: calc(50% - 10px);
             }
           }
-          @media (max-width: 576px) { /* Adjust for very small screens */
+          @media (max-width: 576px) {
             .review-card {
-              width: 100%; /* 1 card per row */
+              width: 100%;
             }
-            .review-nav { /* Adjust nav button position for single card view */
+            .review-nav {
               top: auto;
               bottom: -40px;
               transform: none;
@@ -423,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
               right: 35%;
             }
             .reviews-wrapper {
-              padding-bottom: 50px; /* Space for nav buttons */
+              padding-bottom: 50px;
             }
           }
         `;
@@ -432,114 +411,222 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-// Checkout Modal Functionality - Direct approach
-(function() {
-  'use strict';
-  
+document.addEventListener('DOMContentLoaded', function() {
+  function getAllTriggers() {
+    const cartCheckoutTriggers = document.querySelectorAll('[data-checkout-modal-trigger]');
+    const productATCButtons = document.querySelectorAll('[data-product-atc]:not([data-product-atc-preorder])');
+    const preorderButtons = document.querySelectorAll('[data-product-atc-preorder]');
+    const paymentButtons = document.querySelectorAll([
+      '[data-shopify="payment-button"] button',
+      '.shopify-payment-button button',
+      '.shopify-payment-button__button',
+      '.shopify-payment-button__button--unbranded',
+      'button[name="add"]',
+      '.product-form--atc-button',
+      '.productitem--action-atc',
+      '[data-quick-buy]',
+      '[data-quickshop-slim]',
+      '[data-quickshop-full]',
+      '.modal .shopify-payment-button button',
+      '.modal .shopify-payment-button__button',
+      '.modal .shopify-payment-button__button--unbranded',
+      '.product__container--quick-shop .shopify-payment-button button',
+      '.product__container--quick-shop .shopify-payment-button__button',
+      '.product__container--quick-shop .shopify-payment-button__button--unbranded'
+    ].join(', '));
+    return [
+      ...cartCheckoutTriggers,
+      ...productATCButtons,
+      ...preorderButtons,
+      ...paymentButtons
+    ];
+  }
   function initCheckoutModal() {
-    console.log('🚀 Initializing checkout modal...');
-    
-    // Wait for elements to be available
     const checkoutModal = document.getElementById('checkout-modal');
-    
     if (!checkoutModal) {
-      console.warn('⚠️ Checkout modal element not found, retrying...');
       return false;
     }
-    
-    console.log('✅ Modal element found');
-    
-    // Get all elements
-    const triggers = document.querySelectorAll('[data-checkout-modal-trigger]');
+    const allTriggers = getAllTriggers();
     const backdrop = checkoutModal.querySelector('[data-checkout-modal-backdrop]');
     const closeButtons = checkoutModal.querySelectorAll('[data-checkout-modal-close]');
     const proceedButton = checkoutModal.querySelector('.checkout-modal__proceed');
-    
-    console.log(`Found ${triggers.length} trigger(s)`);
-    console.log(`Found ${closeButtons.length} close button(s)`);
-    console.log('Backdrop found:', !!backdrop);
-    console.log('Proceed button found:', !!proceedButton);
-    
-    // Modal control functions
-    function openModal() {
-      console.log('🔓 Opening modal');
+    function showModal() {
       checkoutModal.classList.add('active');
       checkoutModal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-    
-    function closeModal() {
-      console.log('🔒 Closing modal');
+    function hideModal() {
       checkoutModal.classList.remove('active');
       checkoutModal.style.display = 'none';
       document.body.style.overflow = '';
     }
-    
-    // Attach event listeners to all checkout triggers
-    triggers.forEach((trigger, index) => {
-      console.log(`🔗 Attaching listener to trigger ${index + 1}:`, trigger);
-      
-      trigger.addEventListener('click', function(e) {
-        console.log('🖱️ Checkout trigger clicked!', this);
-        e.preventDefault();
-        e.stopPropagation();
-        openModal();
-      });
-    });
-    
-    // Close modal on backdrop click
-    if (backdrop) {
-      backdrop.addEventListener('click', function(e) {
-        if (e.target === backdrop) {
-          console.log('🖱️ Backdrop clicked');
-          closeModal();
+    const originalForms = new Map();
+    function attachListeners(triggers) {
+      triggers.forEach(function(trigger) {
+        if (trigger.hasAttribute('data-modal-listener-added')) {
+          return;
         }
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (this.hasAttribute('data-product-atc') || this.hasAttribute('data-product-atc-preorder')) {
+            const form = this.closest('form');
+            if (form) {
+              originalForms.set('currentForm', form);
+              if (proceedButton) {
+                proceedButton.onclick = function(e) {
+                  e.preventDefault();
+                  hideModal();
+                  form.submit();
+                };
+              }
+            }
+          } else {
+            if (proceedButton) {
+              proceedButton.onclick = null;
+            }
+          }
+          showModal();
+        });
+        trigger.setAttribute('data-modal-listener-added', 'true');
       });
     }
-    
-    // Close modal on close button click
-    closeButtons.forEach(button => {
+    attachListeners(allTriggers);
+    if (backdrop) {
+      backdrop.addEventListener('click', hideModal);
+    }
+    closeButtons.forEach(function(button) {
       button.addEventListener('click', function(e) {
-        console.log('🖱️ Close button clicked');
         e.preventDefault();
-        closeModal();
+        hideModal();
       });
     });
-    
-    // Close on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && checkoutModal.classList.contains('active')) {
-        console.log('⌨️ Escape key pressed');
-        closeModal();
+        hideModal();
       }
     });
-    
-    console.log('✅ Checkout modal initialization complete');
     return true;
   }
-  
-  // Try multiple initialization approaches
-  function tryInit() {
-    if (initCheckoutModal()) {
-      return;
-    }
-    
-    // If not found, try again after DOM content loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(initCheckoutModal, 100);
+  function rescanForButtons() {
+    const checkoutModal = document.getElementById('checkout-modal');
+    if (checkoutModal) {
+      const newTriggers = getAllTriggers();
+      const proceedButton = checkoutModal.querySelector('.checkout-modal__proceed');
+      const originalForms = new Map();
+      function showModal() {
+        checkoutModal.classList.add('active');
+        checkoutModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function hideModal() {
+        checkoutModal.classList.remove('active');
+        checkoutModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      newTriggers.forEach(function(trigger) {
+        if (trigger.hasAttribute('data-modal-listener-added')) {
+          return;
+        }
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (this.hasAttribute('data-product-atc') || this.hasAttribute('data-product-atc-preorder')) {
+            const form = this.closest('form');
+            if (form) {
+              originalForms.set('currentForm', form);
+              if (proceedButton) {
+                proceedButton.onclick = function(e) {
+                  e.preventDefault();
+                  hideModal();
+                  form.submit();
+                };
+              }
+            }
+          } else {
+            if (proceedButton) {
+              proceedButton.onclick = null;
+            }
+          }
+          showModal();
+        });
+        trigger.setAttribute('data-modal-listener-added', 'true');
       });
-    } else {
-      setTimeout(initCheckoutModal, 100);
     }
   }
-  
-  // Start initialization
-  tryInit();
-  
-  // Also try after window load
-  window.addEventListener('load', function() {
-    setTimeout(initCheckoutModal, 200);
+  if (initCheckoutModal()) {
+  } else {
+    let attempts = 0;
+    const maxAttempts = 20;
+    const retryInterval = setInterval(function() {
+      attempts++;
+      if (initCheckoutModal()) {
+        clearInterval(retryInterval);
+      } else if (attempts >= maxAttempts) {
+        clearInterval(retryInterval);
+      }
+    }, 100);
+  }
+  setTimeout(initCheckoutModal, 200);
+  setTimeout(initCheckoutModal, 1000);
+  const observer = new MutationObserver(function(mutations) {
+    let shouldRescan = false;
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach(function(node) {
+          if (node.nodeType === 1) {
+            if (node.querySelector && (
+              node.querySelector('[data-product-atc]') ||
+              node.querySelector('[data-shopify="payment-button"]') ||
+              node.querySelector('.shopify-payment-button') ||
+              node.querySelector('.shopify-payment-button__button') ||
+              node.querySelector('.shopify-payment-button__button--unbranded') ||
+              node.querySelector('[data-quick-buy]') ||
+              node.querySelector('[data-quickshop-slim]') ||
+              node.querySelector('[data-quickshop-full]') ||
+              node.classList.contains('shopify-payment-button') ||
+              node.classList.contains('shopify-payment-button__button') ||
+              node.classList.contains('shopify-payment-button__button--unbranded') ||
+              node.classList.contains('modal') ||
+              node.classList.contains('product__container--quick-shop')
+            )) {
+              shouldRescan = true;
+            }
+          }
+        });
+      }
+    });
+    if (shouldRescan) {
+      setTimeout(rescanForButtons, 100);
+      setTimeout(rescanForButtons, 500);
+    }
   });
-  
-})();
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  document.addEventListener('modalContentLoaded', function() {
+    setTimeout(rescanForButtons, 100);
+  });
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('[data-quickshop-full], [data-quickshop-slim]')) {
+      setTimeout(rescanForButtons, 500);
+      setTimeout(rescanForButtons, 1000);
+    }
+  });
+  const paymentObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1 && 
+            (node.classList.contains('shopify-payment-button') || 
+             node.querySelector && node.querySelector('.shopify-payment-button'))) {
+          setTimeout(rescanForButtons, 100);
+        }
+      });
+    });
+  });
+  paymentObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+});
