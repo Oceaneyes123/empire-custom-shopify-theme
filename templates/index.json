@@ -302,6 +302,14 @@
             "collection": "spikefast",
             "title": ""
           }
+        },
+        "collection_DR4j8Q": {
+          "type": "collection",
+          "settings": {
+            "collection": "stihl-products",
+            "image": "shopify:\/\/shop_images\/stihl2.png",
+            "title": "Stihl"
+          }
         }
       },
       "block_order": [
@@ -309,7 +317,8 @@
         "collection_D3hgdD",
         "collection_bxftjY",
         "collection_MAjTbV",
-        "collection_t9MQna"
+        "collection_t9MQna",
+        "collection_DR4j8Q"
       ],
       "custom_css": [],
       "settings": {
@@ -333,7 +342,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"main-container\">\n<h2>THE VALUE WE PROVIDE<\/h2>\n<div class=\"home-value\">\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Backtrack’s mobile trailer provides quick delivery and a showroom that can come to you<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Project assistance to ensure you have what you need on-site for every project<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Knowledgeable and experienced staff in our five locations across Canada<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Factory authorized in-house repairs and support for all major brands.<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>In-house design and manufacturing<\/p>\n    <\/div>\n    \n<\/div>\n<\/div>"
+        "custom_html": "<div class=\"main-container\">\n<h2>THE VALUE WE PROVIDE<\/h2>\n<div class=\"home-value\">\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>In-house design and manufacturing<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Project assistance to ensure you have what you need on-site for every project<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Knowledgeable and experienced staff in our five locations across Canada<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Factory authorized in-house repairs and support for all major brands.<\/p>\n    <\/div>\n    \n<\/div>\n<\/div>"
       }
     },
     "dynamic_image_with_text_FEUAXk": {
@@ -472,16 +481,10 @@
     },
     "dynamic_html_6Vytwe": {
       "type": "dynamic-html",
-      "custom_css": [
-        ".home-perks-container {display: flex; justify-content: space-around; align-items: center; padding: 50px 20px; gap: 20px;}",
-        ".home-perks-text-content {display: flex; gap: 20px;}",
-        ".orange {color: #f57523;}",
-        "@media (max-width: 1024px) {.home-perks-container {flex-direction: column-reverse; }}",
-        "@media (max-width: 768px) {.home-perks-text-content {flex-direction: column; } img {width: 100%; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"home-perks-container\">\n    <div>\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/Canada.png?v=1700162938\" alt=\"Canada\">\n    <\/div>\n    <div class=\"home-perks-text-content\">\n        <div>\n            <h4>BACKTRACK IS YOUR<br> <span class=\"orange\">PARTNER IN SUCCESS<\/span>\n<\/h4>\n            <p>Backtrack is equipped to meet any of your safety, maintanance, rail handling &amp; construction needs.<\/p>\n        <\/div>\n        <div>\n            <h4>DIRECT SHIPPING <br> <span class=\"orange\">ANYWHERE IN CANADA<\/span>\n<\/h4>\n            <p>Backtrack makes it easy to get what you need when you need it.<\/p>\n        <\/div>\n        <div>\n            <h4>OPTIONS TO SUIT<br> <span class=\"orange\">YOUR NEEDS<\/span>\n<\/h4>\n            <p>Order online, over-the-phone or in-store. Pick up in-store or ship direct to your location.<\/p>\n        <\/div>\n    <\/div>\n<\/div>"
+        "custom_html": "<div class=\"home-perks-container\">\n    <div class=\"home-perks-image\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/Canada.png?v=1700162938\" alt=\"Canada\">\n    <\/div>\n    <div class=\"home-perks-text-content\">\n        <div>\n            <h4>BACKTRACK IS YOUR<br> <span class=\"orange\">PARTNER IN SUCCESS<\/span>\n<\/h4>\n            <p>Backtrack is equipped to meet any of your safety, <br>maintanance, rail handling &amp; construction needs.<\/p>\n        <\/div>\n        <div>\n            <h4>DIRECT SHIPPING <br> <span class=\"orange\">ANYWHERE IN CANADA<\/span>\n<\/h4>\n            <p>Backtrack makes it easy to get what you need when you need it.<\/p>\n        <\/div>\n        <div>\n            <h4>OPTIONS TO SUIT<br> <span class=\"orange\">YOUR NEEDS<\/span>\n<\/h4>\n            <p>Order online, over-the-phone or in-store. Pick up in-store or <br>ship direct to your location.<\/p>\n        <\/div>\n    <\/div>\n<\/div>\n\n<style>\n.home-perks-container {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  padding: 50px 20px;\n  gap: 50px;\n}\n\n.home-perks-image {\n  flex: 0 0 50%;\n  \/* Ensures the image container respects width without stretching *\/\n}\n\n.home-perks-image img {\n  width: 100%;\n  height: auto;\n  display: block;\n  max-width: 100%;\n  \/* Ensures the image never exceeds its container and keeps aspect ratio *\/\n}\n\n.home-perks-text-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n\n.orange {\n  color: #f57523;\n}\n\n\/* Mobile: Stack on smaller screens *\/\n@media (max-width: 1024px) {\n  .home-perks-container {\n    flex-direction: column-reverse;\n    text-align: center;\n  }\n\n  .home-perks-image {\n    width: 100%;\n    max-width: 500px;\n    margin: 0 auto;\n  }\n\n  .home-perks-image img {\n    width: 100%;\n    height: auto;\n  }\n}\n<\/style>"
       }
     }
   },

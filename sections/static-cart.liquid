@@ -86,8 +86,8 @@
 
           <button
             class="button-primary cart-title-button"
-            name="checkout"
-            type="submit"
+            type="button"
+            data-checkout-modal-trigger
             aria-label="{{ 'cart.general.checkout' | t }}"
           >
             {% if settings.enable_checkout_lock_icon %}
@@ -181,8 +181,8 @@
           <div class="cart-checkout">
             <button
               class="button-primary"
-              type="submit"
-              name="checkout"
+              type="button"
+              data-checkout-modal-trigger
               aria-label="{{ 'cart.general.checkout' | t }}"
             >
               {% if settings.enable_checkout_lock_icon %}
@@ -295,6 +295,8 @@
     {% endif %}
   </section>
 </form>
+
+{% render 'checkout-modal' %}
 
 {% schema %}
 {

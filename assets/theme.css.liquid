@@ -24786,3 +24786,251 @@ h3.contact-heading {
     top: 0;
   }
 }
+
+/* Checkout Modal Styles */
+.checkout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.checkout-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkout-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.checkout-modal__content {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.checkout-modal.active .checkout-modal__content {
+  transform: scale(1);
+}
+
+.checkout-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.checkout-modal__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+  padding-right: 16px;
+}
+
+.checkout-modal__close {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #374151;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checkout-modal__close:hover {
+  background: white;
+  color: #1f2937;
+  transform: scale(1.05);
+}
+
+.checkout-modal__body {
+  padding: 24px;
+}
+
+.checkout-modal__warning-box {
+  border: 2px solid #d97706;
+  border-radius: 8px;
+  background: #fef3c7;
+  padding: 0;
+  overflow: hidden;
+}
+
+.checkout-modal__warning {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border-left: 5px solid #f59e0b;
+}
+
+.checkout-modal__warning-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.checkout-modal__warning-content {
+  flex: 1;
+}
+
+.checkout-modal__section {
+  margin-bottom: 20px;
+}
+
+.checkout-modal__section:last-child {
+  margin-bottom: 0;
+}
+
+.checkout-modal__section h4 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.checkout-modal__section p {
+  margin: 0 0 8px 0;
+  color: #374151;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.checkout-modal__section p:last-child {
+  margin-bottom: 0;
+}
+
+.checkout-modal__footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+}
+
+.checkout-modal__cancel {
+  flex: 1;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.checkout-modal__cancel:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.checkout-modal__form {
+  flex: 2;
+}
+
+.checkout-modal__proceed {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.checkout-modal__proceed:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.checkout-modal__proceed:disabled {
+  background: #9ca3af;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.checkout-modal__proceed svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .checkout-modal__content {
+    max-width: 95%;
+    margin: 20px;
+    max-height: 85vh;
+  }
+  
+  .checkout-modal__header {
+    padding: 20px 16px 12px;
+  }
+  
+  .checkout-modal__title {
+    font-size: 1.2rem;
+  }
+  
+  .checkout-modal__body {
+    padding: 16px;
+  }
+  
+  .checkout-modal__warning-box {
+    border-width: 1px;
+  }
+  
+  .checkout-modal__warning {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border-left-width: 4px;
+  }
+  
+  .checkout-modal__warning-icon {
+    align-self: flex-start;
+    font-size: 1.5rem;
+  }
+  
+  .checkout-modal__footer {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+  }
+  
+  .checkout-modal__cancel,
+  .checkout-modal__form {
+    flex: none;
+  }
+}

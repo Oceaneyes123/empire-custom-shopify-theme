@@ -1,0 +1,55 @@
+{% comment %}
+  Checkout confirmation modal snippet
+  Usage: {% render 'checkout-modal' %}
+{% endcomment %}
+
+<!-- Checkout Confirmation Modal -->
+<div class="checkout-modal" id="checkout-modal" data-checkout-modal style="display: none;">
+  <div class="checkout-modal__backdrop checkout-modal-backdrop" data-checkout-modal-backdrop></div>
+  <div class="checkout-modal__content">
+    <div class="checkout-modal__header">
+      <h2 class="checkout-modal__title">Almost There... Just a Quick Word on Shipping, Duties, and Tariffs</h2>
+      <button class="checkout-modal__close" data-checkout-modal-close aria-label="{{ 'general.accessibility.close' | t }}">
+        {% render 'icon-menu-close' %}
+      </button>
+    </div>
+    <div class="checkout-modal__body">
+      <div class="checkout-modal__warning-box">
+        <div class="checkout-modal__warning">
+          <div class="checkout-modal__warning-icon">⚠️</div>
+          <div class="checkout-modal__warning-content">
+            <div class="checkout-modal__section">
+              <h4>For U.S. customers:</h4>
+              <p>Import duties or taxes may apply at delivery. We do our best to minimize these costs, but they are set by U.S. Customs and are the buyer's responsibility unless otherwise noted.</p>
+            </div>
+            
+            <div class="checkout-modal__section">
+              <h4>For all customers (U.S. and Canada):</h4>
+              <p>Shipping rates shown at checkout are estimates. In some cases, the final shipping cost may need to be adjusted based on order size, weight, or delivery location.</p>
+              <p>If any changes apply to your order, someone from the Backtrack team will contact you directly before processing.</p>
+            </div>
+            
+            <div class="checkout-modal__section checkout-modal__section--highlight">
+              <p><strong>Questions? Reach out—we're happy to help before you place your order.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-modal__footer">
+      <button class="button-secondary checkout-modal__cancel" data-checkout-modal-close>
+        Cancel
+      </button>
+      <form action="{{ routes.cart_url }}" method="post" class="checkout-modal__form">
+        <button class="button-primary checkout-modal__proceed" type="submit" name="checkout">
+          {% if settings.enable_checkout_lock_icon %}
+            {% render 'icon-checkout-lock' %}
+          {% else %}
+            {% render 'icon-library', id: 'icon-cart' %}
+          {% endif %}
+          Proceed to Checkout
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

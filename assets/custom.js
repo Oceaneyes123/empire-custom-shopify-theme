@@ -431,3 +431,115 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+// Checkout Modal Functionality - Direct approach
+(function() {
+  'use strict';
+  
+  function initCheckoutModal() {
+    console.log('🚀 Initializing checkout modal...');
+    
+    // Wait for elements to be available
+    const checkoutModal = document.getElementById('checkout-modal');
+    
+    if (!checkoutModal) {
+      console.warn('⚠️ Checkout modal element not found, retrying...');
+      return false;
+    }
+    
+    console.log('✅ Modal element found');
+    
+    // Get all elements
+    const triggers = document.querySelectorAll('[data-checkout-modal-trigger]');
+    const backdrop = checkoutModal.querySelector('[data-checkout-modal-backdrop]');
+    const closeButtons = checkoutModal.querySelectorAll('[data-checkout-modal-close]');
+    const proceedButton = checkoutModal.querySelector('.checkout-modal__proceed');
+    
+    console.log(`Found ${triggers.length} trigger(s)`);
+    console.log(`Found ${closeButtons.length} close button(s)`);
+    console.log('Backdrop found:', !!backdrop);
+    console.log('Proceed button found:', !!proceedButton);
+    
+    // Modal control functions
+    function openModal() {
+      console.log('🔓 Opening modal');
+      checkoutModal.classList.add('active');
+      checkoutModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      console.log('🔒 Closing modal');
+      checkoutModal.classList.remove('active');
+      checkoutModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Attach event listeners to all checkout triggers
+    triggers.forEach((trigger, index) => {
+      console.log(`🔗 Attaching listener to trigger ${index + 1}:`, trigger);
+      
+      trigger.addEventListener('click', function(e) {
+        console.log('🖱️ Checkout trigger clicked!', this);
+        e.preventDefault();
+        e.stopPropagation();
+        openModal();
+      });
+    });
+    
+    // Close modal on backdrop click
+    if (backdrop) {
+      backdrop.addEventListener('click', function(e) {
+        if (e.target === backdrop) {
+          console.log('🖱️ Backdrop clicked');
+          closeModal();
+        }
+      });
+    }
+    
+    // Close modal on close button click
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        console.log('🖱️ Close button clicked');
+        e.preventDefault();
+        closeModal();
+      });
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && checkoutModal.classList.contains('active')) {
+        console.log('⌨️ Escape key pressed');
+        closeModal();
+      }
+    });
+    
+    console.log('✅ Checkout modal initialization complete');
+    return true;
+  }
+  
+  // Try multiple initialization approaches
+  function tryInit() {
+    if (initCheckoutModal()) {
+      return;
+    }
+    
+    // If not found, try again after DOM content loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initCheckoutModal, 100);
+      });
+    } else {
+      setTimeout(initCheckoutModal, 100);
+    }
+  }
+  
+  // Start initialization
+  tryInit();
+  
+  // Also try after window load
+  window.addEventListener('load', function() {
+    setTimeout(initCheckoutModal, 200);
+  });
+  
+})();
