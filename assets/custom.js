@@ -422,8 +422,8 @@ document.addEventListener('DOMContentLoaded', function() {
       '.shopify-payment-button__button',
       '.shopify-payment-button__button--unbranded',
       'button[name="add"]',
-      '.product-form--atc-button',
-      '.productitem--action-atc',
+      '.product-form--atc-button:not(.see-the-price--btn)',
+      '.productitem--action-atc:not(.see-the-price--btn)',
       '[data-quick-buy]',
       '[data-quickshop-slim]',
       '[data-quickshop-full]',
@@ -434,11 +434,18 @@ document.addEventListener('DOMContentLoaded', function() {
       '.product__container--quick-shop .shopify-payment-button__button',
       '.product__container--quick-shop .shopify-payment-button__button--unbranded'
     ].join(', '));
+    
+    // Filter out "See the Price" buttons that are inside login links
+    const filteredPaymentButtons = Array.from(paymentButtons).filter(button => {
+      return !button.classList.contains('see-the-price--btn') && 
+             !button.closest('a[href*="/account/login"]');
+    });
+    
     return [
       ...cartCheckoutTriggers,
       ...productATCButtons,
       ...preorderButtons,
-      ...paymentButtons
+      ...filteredPaymentButtons
     ];
   }
   function initCheckoutModal() {
@@ -467,9 +474,24 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
         }
         trigger.addEventListener('click', function(e) {
+          // Don't prevent default for "See the Price" buttons - let them navigate to login
+          if (trigger.classList.contains('see-the-price--btn') || 
+              trigger.closest('a[href*="/account/login"]')) {
+            return;
+          }
+          
+          // Always prevent default behavior for payment buttons and ATC buttons
           e.preventDefault();
           e.stopPropagation();
+          e.stopImmediatePropagation();
+          
+          const isPaymentButton = this.closest('.shopify-payment-button') || 
+                                this.closest('[data-shopify="payment-button"]') ||
+                                this.classList.contains('shopify-payment-button__button') ||
+                                this.classList.contains('shopify-payment-button__button--unbranded');
+          
           if (this.hasAttribute('data-product-atc') || this.hasAttribute('data-product-atc-preorder')) {
+            // Regular Add to Cart button - submit the form
             const form = this.closest('form');
             if (form) {
               originalForms.set('currentForm', form);
@@ -481,13 +503,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
               }
             }
+          } else if (isPaymentButton) {
+            // Payment button (Buy it Now) - store the form reference and submit it
+            const form = this.closest('form');
+            if (form) {
+              originalForms.set('currentForm', form);
+              if (proceedButton) {
+                proceedButton.onclick = function(e) {
+                  e.preventDefault();
+                  hideModal();
+                  // Submit the form directly to go to checkout
+                  form.action = '/cart';
+                  form.submit();
+                };
+              }
+            }
           } else {
             if (proceedButton) {
               proceedButton.onclick = null;
             }
           }
           showModal();
-        });
+        }, true);
         trigger.setAttribute('data-modal-listener-added', 'true');
       });
     }
@@ -529,9 +566,24 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
         }
         trigger.addEventListener('click', function(e) {
+          // Don't prevent default for "See the Price" buttons - let them navigate to login
+          if (trigger.classList.contains('see-the-price--btn') || 
+              trigger.closest('a[href*="/account/login"]')) {
+            return;
+          }
+          
+          // Always prevent default behavior for payment buttons and ATC buttons
           e.preventDefault();
           e.stopPropagation();
+          e.stopImmediatePropagation();
+          
+          const isPaymentButton = this.closest('.shopify-payment-button') || 
+                                this.closest('[data-shopify="payment-button"]') ||
+                                this.classList.contains('shopify-payment-button__button') ||
+                                this.classList.contains('shopify-payment-button__button--unbranded');
+          
           if (this.hasAttribute('data-product-atc') || this.hasAttribute('data-product-atc-preorder')) {
+            // Regular Add to Cart button - submit the form
             const form = this.closest('form');
             if (form) {
               originalForms.set('currentForm', form);
@@ -543,13 +595,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
               }
             }
+          } else if (isPaymentButton) {
+            // Payment button (Buy it Now) - store the form reference and submit it
+            const form = this.closest('form');
+            if (form) {
+              originalForms.set('currentForm', form);
+              if (proceedButton) {
+                proceedButton.onclick = function(e) {
+                  e.preventDefault();
+                  hideModal();
+                  // Submit the form directly to go to checkout
+                  form.action = '/cart';
+                  form.submit();
+                };
+              }
+            }
           } else {
             if (proceedButton) {
               proceedButton.onclick = null;
             }
           }
           showModal();
-        });
+        }, true);
         trigger.setAttribute('data-modal-listener-added', 'true');
       });
     }
