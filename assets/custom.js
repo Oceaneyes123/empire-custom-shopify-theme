@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
       '.product-form--atc-button:not(.see-the-price--btn)',
       '.productitem--action-atc:not(.see-the-price--btn)',
       '[data-quick-buy]',
-      '[data-quickshop-slim]',
-      '[data-quickshop-full]',
       '.modal .shopify-payment-button button',
       '.modal .shopify-payment-button__button',
       '.modal .shopify-payment-button__button--unbranded',
