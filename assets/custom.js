@@ -32,16 +32,33 @@ document.addEventListener('DOMContentLoaded', function() {
       '[data-quick-buy]'
     ];
     
-    return Array.from(document.querySelectorAll(selectors.join(', '))).filter(btn => 
-      !btn.hasAttribute('data-modal-listener-added') && 
-      !btn.closest('a[href*="/account/login"]')
-    );
+    return Array.from(document.querySelectorAll(selectors.join(', '))).filter(btn => {
+      const buttonText = btn.innerText || btn.textContent || '';
+      return !btn.hasAttribute('data-modal-listener-added') && 
+             !btn.closest('a[href*="/account/login"]') &&
+             !buttonText.trim().toLowerCase().includes('choose options');
+    });
   }
 
   function attachListeners() {
     getTriggers().forEach(trigger => {
       trigger.addEventListener('click', function(e) {
         if (this.classList.contains('see-the-price--btn')) return;
+        
+        // Check if this is a "Choose Options" button - redirect to product page instead
+        const buttonText = this.innerText || this.textContent || '';
+        if (buttonText.trim().toLowerCase().includes('choose options')) {
+          // Find the product link and redirect
+          const productItem = this.closest('[data-product-item]');
+          if (productItem) {
+            const productLink = productItem.querySelector('[data-product-page-link]');
+            if (productLink && productLink.href) {
+              window.location.href = productLink.href;
+              return;
+            }
+          }
+          return;
+        }
         
         e.preventDefault();
         e.stopPropagation();
@@ -88,6 +105,27 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', e => {
     if (e.target.matches('[data-quickshop-full], [data-quickshop-slim]')) {
       setTimeout(attachListeners, 500);
+    }
+  });
+
+  // Handle "Choose Options" buttons - redirect to product page
+  document.addEventListener('click', e => {
+    const button = e.target.closest('button');
+    if (button) {
+      const buttonText = button.innerText || button.textContent || '';
+      if (buttonText.trim().toLowerCase().includes('choose options')) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Find the product link and redirect
+        const productItem = button.closest('[data-product-item]');
+        if (productItem) {
+          const productLink = productItem.querySelector('[data-product-page-link]');
+          if (productLink && productLink.href) {
+            window.location.href = productLink.href;
+          }
+        }
+      }
     }
   });
 });
