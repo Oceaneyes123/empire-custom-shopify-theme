@@ -34,9 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     return Array.from(document.querySelectorAll(selectors.join(', '))).filter(btn => {
       const buttonText = btn.innerText || btn.textContent || '';
+      const lowerText = buttonText.trim().toLowerCase();
       return !btn.hasAttribute('data-modal-listener-added') && 
              !btn.closest('a[href*="/account/login"]') &&
-             !buttonText.trim().toLowerCase().includes('choose options');
+             !lowerText.includes('choose options') &&
+             !lowerText.includes('add to cart');
     });
   }
 
@@ -44,11 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     getTriggers().forEach(trigger => {
       trigger.addEventListener('click', function(e) {
         if (this.classList.contains('see-the-price--btn')) return;
-        
-        // Check if this is a "Choose Options" button - redirect to product page instead
         const buttonText = this.innerText || this.textContent || '';
-        if (buttonText.trim().toLowerCase().includes('choose options')) {
-          // Find the product link and redirect
+        const lowerText = buttonText.trim().toLowerCase();
+        // "Choose Options" button: redirect to product page
+        if (lowerText.includes('choose options')) {
           const productItem = this.closest('[data-product-item]');
           if (productItem) {
             const productLink = productItem.querySelector('[data-product-page-link]');
@@ -59,14 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           return;
         }
-        
+        // "Add to Cart" button: let original function work
+        if (lowerText.includes('add to cart')) {
+          return;
+        }
         e.preventDefault();
         e.stopPropagation();
-        
         const form = this.closest('form');
         const isPaymentButton = this.closest('.shopify-payment-button') || 
                                this.classList.contains('shopify-payment-button__button');
-        
         if (form && proceedButton) {
           proceedButton.onclick = function() {
             hideModal();
@@ -76,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
             form.submit();
           };
         }
-        
         showModal();
       }, true);
       
