@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getTriggers() {
     const selectors = [
-      '[data-checkout-modal-trigger]',
+      // Intentionally exclude '[data-checkout-modal-trigger]' from direct binding.
+      // We capture it via delegated listener to handle dynamic/templated markup reliably.
       '[data-product-atc]',
       '[data-product-atc-preorder]',
       '.shopify-payment-button button:not(.see-the-price--btn)',
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       '.productitem--action-atc:not(.see-the-price--btn)',
       '[data-quick-buy]'
     ];
-    
+
     return Array.from(document.querySelectorAll(selectors.join(', '))).filter(btn => {
       const buttonText = btn.innerText || btn.textContent || '';
       const lowerText = buttonText.trim().toLowerCase();
@@ -75,7 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isPaymentButton) {
               form.action = '/cart';
             }
+            // Ensure Shopify receives the checkout intent
+            let hidden = form.querySelector('input[name="checkout"]');
+            let cleanup = null;
+            if (!hidden) {
+              hidden = document.createElement('input');
+              hidden.type = 'hidden';
+              hidden.name = 'checkout';
+              hidden.value = '1';
+              form.appendChild(hidden);
+              cleanup = () => hidden.remove();
+            }
             form.submit();
+            if (cleanup) setTimeout(cleanup, 0);
           };
         }
         showModal();
@@ -101,6 +114,54 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   observer.observe(document.body, { childList: true, subtree: true });
+
+  // Always capture clicks on checkout-modal triggers (handles dynamic ATC banner buttons)
+  document.addEventListener('click', function(e) {
+    const trigger = e.target.closest('[data-checkout-modal-trigger]');
+    if (!trigger) return;
+
+    // Respect explicit opt-outs
+    if (trigger.classList.contains('see-the-price--btn')) return;
+
+    const buttonText = trigger.innerText || trigger.textContent || '';
+    const lowerText = buttonText.trim().toLowerCase();
+    if (lowerText.includes('choose options') || lowerText.includes('add to cart')) return;
+
+    const form = trigger.closest('form');
+    const isPaymentButton = trigger.closest('.shopify-payment-button') || 
+                            trigger.classList.contains('shopify-payment-button__button');
+
+    // If modal UI exists, intercept and show it. Otherwise, fall through.
+    if (form && proceedButton) {
+      e.preventDefault();
+      e.stopPropagation();
+      // Stop other listeners in capture to prevent dupe behavior
+      if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
+
+      proceedButton.onclick = function() {
+        hideModal();
+        if (isPaymentButton) {
+          form.action = '/cart';
+        }
+        // Ensure Shopify receives the checkout intent
+        let hidden = form.querySelector('input[name="checkout"]');
+        let cleanup = null;
+        if (!hidden) {
+          hidden = document.createElement('input');
+          hidden.type = 'hidden';
+          hidden.name = 'checkout';
+          hidden.value = '1';
+          form.appendChild(hidden);
+          cleanup = () => hidden.remove();
+        }
+        form.submit();
+        if (cleanup) setTimeout(cleanup, 0);
+      };
+
+      showModal();
+    }
+    // If no modal present, allow default submit (type="submit" fallback)
+  }, true);
   
   // Handle quickshop triggers
   document.addEventListener('click', e => {
