@@ -113,12 +113,34 @@
   document.addEventListener('DOMContentLoaded', function() {
     var variantSelectElement = document.querySelector('[data-variant-selection]');
     var productGalleryElement = document.querySelector('[data-gallery-scroller]');
+    var partNumberElement = document.querySelector('.part-number_sku');
+
+    function setSkuMessage(variant) {
+      if (!partNumberElement) return;
+      var text = (variant && variant.sku) ? `(${variant.sku})` : '';
+      partNumberElement.textContent = text;
+    }
+
+    // Initialize with current selection (fallback to Liquid-selected variant id)
+    (function initSkuMessage() {
+      var initialVariant = null;
+      if (variantSelectElement) {
+        var selectedTitle = variantSelectElement.value;
+        initialVariant = product.variants.find(function(v){ return v.title == selectedTitle; }) || null;
+      }
+      if (!initialVariant) {
+        var initialVariantId = {{ selected_variant.id | json }};
+        initialVariant = product.variants.find(function(v){ return v.id == initialVariantId; }) || product.variants[0];
+      }
+      setSkuMessage(initialVariant);
+    })();
 
     // HANDLING VARIANT CHANGE
     if (variantSelectElement) {
       variantSelectElement.addEventListener('change', function(event) {
         var selectedVariantTitle= event.target.value;
         var selectedVariant = product.variants.find(variant => variant.title == selectedVariantTitle);
+        setSkuMessage(selectedVariant);
         if (selectedVariant && selectedVariant.featured_media) {
           var selectedMediaId = selectedVariant.featured_media.id;
           var selectedElement = document.querySelectorAll(`[data-media="${selectedMediaId}"]`);
@@ -171,6 +193,7 @@
           variantElement.dispatchEvent(new Event('change'))
           var moneyElement = document.querySelector('.price__current').querySelector('.money');
            moneyElement.textContent = `$${(price / 100).toFixed(2)}`;
+           setSkuMessage(selectedVariant);
         }, 100);
     });
   });
@@ -291,15 +314,18 @@
 
             {% when 'vendor' %}
               {% if product.vendor != blank or onboarding %}
-                <div class="product-vendor">
-                  {% unless onboarding %}
-                    {%- capture vendor_link -%}
-                      {{ product.vendor | link_to_vendor }}
-                    {%- endcapture -%}
-                    {{ 'product.general.by_vendor_html' | t: vendor_link: vendor_link }}
-                  {% else %}
-                    {{ 'onboarding.product.by_vendor' | t }}
-                  {% endunless %}
+                <div class="product-vendor-flex" style="display:flex; align-items:center; gap: 20px;">
+                  <div class="product-vendor">
+                    {% unless onboarding %}
+                      {%- capture vendor_link -%}
+                        {{ product.vendor | link_to_vendor }}
+                      {%- endcapture -%}
+                      {{ 'product.general.by_vendor_html' | t: vendor_link: vendor_link }}
+                    {% else %}
+                      {{ 'onboarding.product.by_vendor' | t }}
+                    {% endunless %}
+                  </div>
+                  <div class="part-number_sku">No Available Part Number</div>
                 </div>
               {% endif %}
 
