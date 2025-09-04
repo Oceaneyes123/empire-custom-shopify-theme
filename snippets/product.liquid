@@ -117,8 +117,18 @@
 
     function setSkuMessage(variant) {
       if (!partNumberElement) return;
-      var text = (variant && variant.sku) ? `(${variant.sku})` : '';
-      partNumberElement.textContent = text;
+
+      // Ensure there's a <strong> element to keep the part number bold
+      var strongEl = partNumberElement.querySelector('strong');
+      if (!strongEl) {
+        strongEl = document.createElement('strong');
+        // Clear any existing content and append the strong element
+        partNumberElement.innerHTML = '';
+        partNumberElement.appendChild(strongEl);
+      }
+
+      var text = (variant && variant.sku) ? `PN: ${variant.sku}` : '';
+      strongEl.textContent = text;
     }
 
     // Initialize with current selection (fallback to Liquid-selected variant id)
@@ -169,33 +179,57 @@
     }
 
     // UPDATE VARIANT SELECT BASED ON PRODUCT GALLERY SELECTION
-    productGalleryElement.addEventListener('click', function(event) { 
-      var allMediaElements = document.querySelectorAll('[data-media]');
-      for (var i = 0; i < allMediaElements.length; i++) {
-        allMediaElements[i].setAttribute('aria-hidden', 'true');
-        allMediaElements[i].setAttribute('data-gallery-selected', 'false');
-      } 
-      setTimeout(function() {
+    if (productGalleryElement) {
+      productGalleryElement.addEventListener('click', function(event) {
+        var allMediaElements = document.querySelectorAll('[data-media]');
+        for (var i = 0; i < allMediaElements.length; i++) {
+          allMediaElements[i].setAttribute('aria-hidden', 'true');
+          allMediaElements[i].setAttribute('data-gallery-selected', 'false');
+        }
+        setTimeout(function() {
           var selectedElement = document.querySelectorAll('[data-gallery-selected=true]')[1];
-          var selectedMedia = selectedElement.getAttribute('data-media');
-          var selectedVariant;
+          if (!selectedElement) { return; }
 
-          for (var i = 0; i < product.variants.length; i++) {
-            var variant = product.variants[i];
-            if (variant.featured_media && variant.featured_media.id == selectedMedia) {
-              selectedVariant = variant;
-              break;
+          var galleryIndex = selectedElement.getAttribute('data-gallery-index');
+          var selectedMedia = selectedElement.getAttribute('data-media');
+          var selectedVariant = null;
+
+          if (selectedMedia) {
+            for (var j = 0; j < product.variants.length; j++) {
+              var v = product.variants[j];
+              if (v.featured_media && v.featured_media.id == selectedMedia) {
+                selectedVariant = v;
+                break;
+              }
             }
           }
-          var price = selectedVariant.price;
-          var variantElement = document.querySelector('.options-selection__input-select');
-          variantElement.value = selectedVariant.title;
-          variantElement.dispatchEvent(new Event('change'))
-          var moneyElement = document.querySelector('.price__current').querySelector('.money');
-           moneyElement.textContent = `$${(price / 100).toFixed(2)}`;
-           setSkuMessage(selectedVariant);
+
+          // If first gallery item (index 0) is selected, clear the part number display
+          if (galleryIndex === '0') {
+            setSkuMessage(null);
+          } else {
+            // Update price/variant selection only when we have a matching variant
+            if (selectedVariant) {
+              var price = selectedVariant.price;
+              var variantElement = document.querySelector('.options-selection__input-select');
+              if (variantElement) {
+                variantElement.value = selectedVariant.title;
+                variantElement.dispatchEvent(new Event('change'));
+              }
+
+              var currentPriceEl = document.querySelector('.price__current');
+              if (currentPriceEl) {
+                var moneyElement = currentPriceEl.querySelector('.money');
+                if (moneyElement && typeof price === 'number') {
+                  moneyElement.textContent = `$${(price / 100).toFixed(2)}`;
+                }
+              }
+            }
+            setSkuMessage(selectedVariant || null);
+          }
         }, 100);
-    });
+      });
+    }
   });
 </script>
 
