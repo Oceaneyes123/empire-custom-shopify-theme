@@ -235,57 +235,10 @@
 
 <script>
   //ADD PARTS PDF BUTTON TO PRODUCT PAGE
-  var product = {{ product | json }};
-  document.addEventListener('DOMContentLoaded', function() {
-    async function fetchProductMetafields() {
-        const client = ShopifyStorefrontAPIClient.createStorefrontApiClient({
-              storeDomain: 'http://backtrack-7a34.myshopify.com',
-              apiVersion: '2024-10',
-              publicAccessToken: '8ba87fc6ef59856854ef9a0f2844c933'
-        });
-
-        const shopQuery = `
-          query {
-            product(id: "gid://shopify/Product/${product.id}") {
-              partsPdf: metafield(namespace: "custom", key: "parts_pdf") {
-                id
-                namespace
-                key
-                value
-                type
-              }
-              pagePdfFile: metafield(namespace: "custom", key: "page_pdf_file") {
-                id
-                namespace
-                key
-                value
-                type
-              }
-            }
-          }
-          `;
-
-        const {data, errors, extensions} = await client.request(shopQuery);
-        let fileURL = data.product.partsPdf.value;
-        
-        if(fileURL != null) {
-          let baseElement = document.querySelector('.product-form--atc')
-          let button = `<div class="atc--button" style="width:100%: padding: 0; margin-top: 20px">
-                <a href="${fileURL}" target="_blank">
-                  <button class="see-the-price--btn productitem--action-atc button-primary product-form--atc-button mdc-ripple-surface mdc-ripple-upgraded" type="button">
-                    <span class="atc-button--text">Download PDF</span>
-                  </button>
-                </a>
-              </div>`;
-
-          baseElement.insertAdjacentHTML('afterend', button);
-        }
-    }
-
-    fetchProductMetafields();
-
-  });  
+  var product = {{ product | json }}; 
 </script>
+
+<script src="{{ 'partspdf.js' | asset_url }}" defer></script>
 
 <article class="product--outer">
   {%
