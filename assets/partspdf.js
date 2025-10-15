@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 value
                 type
               }
+              productPdf: metafield(namespace: "custom", key: "product_pdf") {
+                id
+                namespace
+                key
+                value
+                type
+              }
             }
           }
           `;
@@ -33,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('test', data)
         console.log('errors', errors)
 
-        let fileURL = data.product.partsPdf.value;
+        let fileURL = data.product.productPdf.value || data.product.partsPdf.value;
         
         if(fileURL != null) {
           let baseElement = document.querySelector('.product-form--atc')
