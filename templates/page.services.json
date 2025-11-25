@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,144 +14,19 @@
       "disabled": true,
       "settings": {}
     },
-    "pxs_image_with_text_overlay_yzRRiU": {
-      "type": "pxs-image-with-text-overlay",
-      "settings": {
-        "section_height": "medium",
-        "image": "shopify:\/\/shop_images\/AmyOlignyPhotography0L2A6124_1.jpg",
-        "title": "Services",
-        "text": "",
-        "content_position": "center-center",
-        "color": "#ffffff",
-        "overlay_background": "#000000",
-        "overlay_opacity": 50,
-        "link": "",
-        "button_text": ""
-      }
-    },
-    "dynamic_image_with_text_ViHf98": {
-      "type": "dynamic-image-with-text",
-      "settings": {
-        "section_heading": "",
-        "image": "shopify:\/\/shop_images\/iw16service.jpg",
-        "desktop_height": "natural",
-        "mobile_height": "natural",
-        "desktop_image_alignment": "left",
-        "mobile_image_alignment": "top",
-        "heading": "Quality and Skills",
-        "subheading": "<p>Backtrack is a factory-authorized repair, warranty and distribution center for most major railway manufacturers. Our factory-trained technicians provide quick turnaround and quality workmanship for all makes of railway tools whether hydraulic, gas, electric or battery powered equipment. With their experience, diversity, and skill Backtrack’s technicians are confident and qualified to take on any railway-specific job required. Custom fabrication, on-board fire fighting systems, new truck set up, stationary blowers, work-head refurbishment, major equipment overhauls, welders, and high frequency electric installations we do it all. Making Backtrack Railway Services LTD. Your One-Stop Railway Equipment, Parts and Service Solution.<\/p>",
-        "text_alignment": "left",
-        "button_label": "Button",
-        "button_link": ""
-      }
-    },
-    "dynamic_image_with_text_qV3rDa": {
-      "type": "dynamic-image-with-text",
-      "settings": {
-        "section_heading": "",
-        "image": "shopify:\/\/shop_images\/IW16_2.jpg",
-        "desktop_height": "natural",
-        "mobile_height": "natural",
-        "desktop_image_alignment": "right",
-        "mobile_image_alignment": "top",
-        "heading": "Technology and Convenience",
-        "subheading": "<p>All of Backtrack’s locations across Canada are equipped with repair facilities. We pride ourselves in having the right tools for the job, keeping all the necessary specialty tools for your railway equipment repairs at every location make a big difference to turn around time and quality of repair.<\/p><p>We also keep track of everything we do, no matter what province or location Backtrack’s computer system knows your history. With the use of equipment serial numbers Backtrack keeps records of your equipment, repair history and expenditures starting from either the date of purchase or the first work order opened. This makes it easy for us to keep supervisors informed with repair quotes, maintenance needs and recommendations as to when a tool, piece of equipment or machine should be retired and new equipment purchased.<\/p>",
-        "text_alignment": "left",
-        "button_label": "Button",
-        "button_link": ""
-      }
-    },
     "dynamic_rich_text_YXBqJT": {
       "type": "dynamic-rich-text",
       "settings": {
         "width": "regular",
-        "title": "THE BEST BRANDS & EQUIPMENT",
-        "text": "<p>We have worked hard to build relationships with the most reputable brands and suppliers in the industry to ensure we have the highest quality parts and equipment available to you when needed.<\/p>",
-        "heading_size": "medium",
-        "text_alignment": "center"
-      }
-    },
-    "dynamic_logo_list_79Hb3G": {
-      "type": "dynamic-logo-list",
-      "blocks": {
-        "logo_bwQ6gL": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_geismar_1.svg",
-            "link": ""
-          }
-        },
-        "logo_Af6QpW": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_harsco_1.svg",
-            "link": ""
-          }
-        },
-        "logo_Ux9FB6": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_portaco_1.svg",
-            "link": ""
-          }
-        },
-        "logo_ayKWAt": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/STANLEY_LOGO.png",
-            "link": ""
-          }
-        },
-        "logo_Uj34ra": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ROBEL_North_America_Logo_R_4c-modified_1.svg",
-            "link": ""
-          }
-        },
-        "logo_tw4r8T": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/MILWAUKEE_logo_RGB-white-in-box-modified_1.svg",
-            "link": ""
-          }
-        },
-        "logo_Tr3YeT": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_wvco_2.svg",
-            "link": ""
-          }
-        },
-        "logo_663wBF": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/brand_grey_pneumatic_1.svg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_bwQ6gL",
-        "logo_Af6QpW",
-        "logo_Ux9FB6",
-        "logo_ayKWAt",
-        "logo_Uj34ra",
-        "logo_tw4r8T",
-        "logo_Tr3YeT",
-        "logo_663wBF"
-      ],
-      "settings": {
-        "title": ""
+        "title": "",
+        "text": "<h1>QUALITY ASSURANCE POLICY</h1><h2></h2><h3>COMMITMENT TO QUALITY:</h3><p>Backtrack Railway Services Ltd. is dedicated to supplying the railway industry with high-quality, reliable, and safe tools and equipment for maintenance of way and general construction activities.</p><h3><br/>PRODUCT CERTIFICATION:</h3><p>All products distributed by Backtrack are sourced from reputable manufacturers and carry<br/>recognized industry certifications, including but not limited to:<br/>• CSA (Canadian Standards Association)<br/>• AREMA (American Railway Engineering and Maintenance-of-Way Association)<br/>• CE (Conformité Européenne)<br/>These certifications demonstrate compliance with the highest safety and industry standards.</p><h3><br/>RESPONSIBILITY OF THE CUSTOMER:</h3><p>While Backtrack ensures that all products meet these recognized standards, customers are<br/>responsible for:<br/>• Ensuring products are used in accordance with their internal safety policies, operational<br/>procedures, and applicable regulations.<br/>• Determining the suitability of products for specific applications, site conditions, or internal<br/>policies.</p><h3><br/>DISCLAIMER:</h3><p>Backtrack Railway Services Ltd. does not provide legal, compliance, or operational<br/>advice regarding the use of supplied products. The responsibility for proper use,<br/>compliance, and suitability rests solely with the customer. Backtrack disclaims any<br/>liability for misuse or non-compliance with applicable requirements.<br/>This policy is subject to periodic review to ensure ongoing relevance and compliance with industry standards.</p>",
+        "heading_size": "large",
+        "text_alignment": "left"
       }
     }
   },
   "order": [
     "main",
-    "pxs_image_with_text_overlay_yzRRiU",
-    "dynamic_image_with_text_ViHf98",
-    "dynamic_image_with_text_qV3rDa",
-    "dynamic_rich_text_YXBqJT",
-    "dynamic_logo_list_79Hb3G"
+    "dynamic_rich_text_YXBqJT"
   ]
 }
