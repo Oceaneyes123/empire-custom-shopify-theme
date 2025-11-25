@@ -32,7 +32,7 @@
 
     panel.innerHTML = `
       <h2 style="margin: 0 0 16px; font-size: 1.75rem; line-height: 1.2;">STIHL Recalls BR 800 Backpack Blowers Due to Laceration Hazard</h2>
-      <p style="margin: 0 0 20px; color: #333;">
+      <p style="margin: 0 0 20px; color: #333; line-height: 1.6;">
         This recall involves the fan wheel of the STIHL BR 800 Magnum, models X and C-E, a backpack blower 
         powered by a combustion engine. The backpack blower is gray and orange. “STIHL,” “BR 800,” and “X” 
         or “C-E” are printed on the rear of the blower. The recalled blower’s serial number is located on 
