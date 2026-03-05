@@ -5,14 +5,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const backdrop = modal.querySelector('[data-checkout-modal-backdrop]');
   const closeButtons = modal.querySelectorAll('[data-checkout-modal-close]');
   const proceedButton = modal.querySelector('.checkout-modal__proceed');
+  const pages = modal.querySelectorAll('[data-checkout-modal-page]');
+  const titlePage1 = modal.querySelector('[data-checkout-modal-title-page="1"]');
+  const titlePage2 = modal.querySelector('[data-checkout-modal-title-page="2"]');
+  const nextButton = modal.querySelector('[data-checkout-modal-next]');
+  const backButton = modal.querySelector('[data-checkout-modal-back]');
+  const proceedForm = modal.querySelector('[data-checkout-modal-proceed-form]');
+
+  function setPage(page) {
+    pages.forEach(section => {
+      const isActive = section.getAttribute('data-checkout-modal-page') === String(page);
+      section.classList.toggle('is-active', isActive);
+    });
+
+    if (titlePage1) titlePage1.classList.toggle('is-active', page === 1);
+    if (titlePage2) titlePage2.classList.toggle('is-active', page === 2);
+    if (nextButton) nextButton.style.display = page === 1 ? '' : 'none';
+    if (backButton) backButton.style.display = page === 2 ? '' : 'none';
+    if (proceedForm) proceedForm.style.display = page === 2 ? '' : 'none';
+  }
   
   function showModal() {
+    setPage(1);
     modal.classList.add('active');
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
   
   function hideModal() {
+    setPage(1);
     modal.classList.remove('active');
     modal.style.display = 'none';
     document.body.style.overflow = '';
@@ -101,11 +122,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Modal close handlers
   if (backdrop) backdrop.addEventListener('click', hideModal);
   closeButtons.forEach(btn => btn.addEventListener('click', hideModal));
+  if (nextButton) {
+    nextButton.addEventListener('click', () => setPage(2));
+  }
+  if (backButton) {
+    backButton.addEventListener('click', () => setPage(1));
+  }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) hideModal();
   });
 
   // Initialize and observe for new buttons
+  setPage(1);
   attachListeners();
   
   const observer = new MutationObserver(() => {

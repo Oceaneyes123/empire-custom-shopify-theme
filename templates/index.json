@@ -15,7 +15,7 @@
         "slide-1": {
           "type": "slide",
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/Rectangle_6.png",
+            "background_image": "shopify://shop_images/Rectangle_6.png",
             "title": "YOUR ONE-STOP RAILWAY EQUIPMENT, PARTS & SERVICE SOLUTION",
             "text": "Backtrack is Canada’s leading railway industry service centre. We provide a one-stop solution for expert-level MOW small tool repair, equipment, thousands of in-stock parts, tools and accessories with an extensive catalogue of factory approved parts and many hard-to-find or discontinued items.In addition, we offer unparalleled industry knowledge to help MOW workers successfully plan for and complete jobs. All of this helps to ensure that Canada’s railway maintenance teams keep both freight and people keep moving across the country",
             "color": "#ffffff",
@@ -56,7 +56,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"hero-section\">\n  <div class=\"hero-content\">\n    <div class=\"hero-header navy-blue\">\n      YOUR ONE-STOP <span class=\"orange\">RAILWAY EQUIPMENT, PARTS &amp; SERVICE<\/span> SOLUTION\n    <\/div>\n    <div class=\"hero-text navy-blue\">\n      Backtrack is Canada's leading railway industry service centre. We provide a\n      one-stop solution for expert-level MOW small tool repair, equipment,\n      thousands of in-stock parts, tools and accessories with an extensive\n      catalogue of factory approved parts and many hard-to-find or discontinued\n      items.In addition, we offer unparalleled industry knowledge to help MOW\n      workers successfully plan for and complete jobs. All of this helps to ensure\n      that Canada's railway maintenance teams keep both freight and people keep\n      moving across the country\n    <\/div>\n      <a href=\"https:\/\/backtrack.com\/collections\/all\">\n        <button>\n          All Products\n        <\/button>\n      <\/a>\n  <\/div>\n<\/div>\n\n<style>\n  .navy-blue{\n    color: #0B213E;\n  }\n  .orange{\n    color: #F57523;\n  }\n  .hero-header {\n    font-size: 2.2rem;\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: 'Work Sans', sans-serif;\n  }\n  .hero-section {\n    background: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/Rectangle_6.png?v=1700072270') center\/cover;\n    background-repeat: no-repeat;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    height: 600px;\n    width: 100vw;\n  }\n  .hero-content {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    padding: 40px 20px;\n    max-width: 800px;\n    border-radius: 10px;\n    text-align: center;\n  }\n  .hero-text{\n    margin: 20px 0;\n    font-size: 1.1rem;\n  }\n  button{\n    background-color: #F57523;\n    color: white;\n    padding: 15px 25px;\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n    font-size: 1rem;\n    font-weight: 600;\n  }\n  @media only screen and (max-width: 719px) {\n    .hero-section {\n      height: 800px;\n    }\n  }\n<\/style>"
+        "custom_html": "<h1 class=\"visually-hidden\">Railway Track Maintenance Tools, Parts &amp; Equipment</h1>\n<div class=\"hero-section\">\n  <div class=\"hero-content\">\n    <div class=\"hero-header navy-blue\">\n      YOUR ONE-STOP <span class=\"orange\">RAILWAY EQUIPMENT, PARTS &amp; SERVICE</span> SOLUTION\n    </div>\n    <div class=\"hero-text navy-blue\">\n      Backtrack is Canada's leading railway industry service centre. We provide a\n      one-stop solution for expert-level MOW small tool repair, equipment,\n      thousands of in-stock parts, tools and accessories with an extensive\n      catalogue of factory approved parts and many hard-to-find or discontinued\n      items.In addition, we offer unparalleled industry knowledge to help MOW\n      workers successfully plan for and complete jobs. All of this helps to ensure\n      that Canada's railway maintenance teams keep both freight and people keep\n      moving across the country\n    </div>\n      <a href=\"https://backtrack.com/collections/all\">\n        <button>\n          All Products\n        </button>\n      </a>\n  </div>\n</div>\n\n<style>\n  .visually-hidden {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    overflow: hidden;\n    clip: rect(0,0,0,0);\n    white-space: nowrap;\n  }\n  .navy-blue{\n    color: #0B213E;\n  }\n  .orange{\n    color: #F57523;\n  }\n  .hero-header {\n    font-size: 2.2rem;\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: 'Work Sans', sans-serif;\n  }\n  .hero-section {\n    background: url('https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Rectangle_6.png?v=1700072270') center/cover;\n    background-repeat: no-repeat;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    height: 600px;\n    width: 100vw;\n  }\n  .hero-content {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    padding: 40px 20px;\n    max-width: 800px;\n    border-radius: 10px;\n    text-align: center;\n  }\n  .hero-text{\n    margin: 20px 0;\n    font-size: 1.1rem;\n  }\n  button{\n    background-color: #F57523;\n    color: white;\n    padding: 15px 25px;\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n    font-size: 1rem;\n    font-weight: 600;\n  }\n  @media only screen and (max-width: 719px) {\n    .hero-section {\n      height: 800px;\n    }\n  }\n</style>"
       }
     },
     "dynamic_html_bf3Qxw": {
@@ -64,14 +64,14 @@
       "custom_css": [],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"home-external-container\">\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/robel-header.png?v=1720481917\" alt=\"Robel\">\n      <div class=\"external-header\">Great On Track<\/div>\n    <\/div>\n    <a href=\"\/pages\/robel\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/stihl-logo.svg?v=1719365050\" alt=\"Stihl\">\n      <div class=\"external-header\">Forestry and Landscaping<\/div>\n    <\/div>\n    <a href=\"\/pages\/locations\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/WVCO_logo_White.png?v=1721605616\" alt=\"WVCO\">\n      <div class=\"external-header\">World Class<\/div>\n      <div class=\"external-text\">\n        Partnering Through Service, Innovation, and Integrity\n      <\/div>\n    <\/div>\n    <a href=\"\/pages\/wvco\"><div class=\"button\">Learn More<\/div><\/a>\n  <\/div>\n<\/div>\n\n<style>\n.home-external-container {\n    display: flex;\n    gap: 20px;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n.external-box{\n  display: flex;\n  flex-direction: column;\n  padding: 30px;\n  align-items: center;\n  justify-content: center;\n  background-color: #0b213e;\n  flex-grow: 1;\n  flex-basis: 200px;\n}\n\nimg{\n  width: 200px;\n}\n\n.external-header{\n  color: white;\n  font-size: 20px;\n  font-weight: 700;\n  margin-top: 10px;\n}\n\n.external-text{\n  color: white;\n  font-size: 14px;\n  text-align: center;\n}\n\n.external-header-wrapper{\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.button{\n  color: white;\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 700;\n  margin-top: 10px;\n  background-color: #F57523;\n  padding: 10px 20px;\n}\n<\/style>"
+        "custom_html": "<div class=\"home-external-container\">\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/robel-header.png?v=1720481917\" alt=\"Robel\">\n      <div class=\"external-header\">Great On Track</div>\n    </div>\n    <a href=\"/pages/robel\"><div class=\"button\">Learn More</div></a>\n  </div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/stihl-logo.svg?v=1719365050\" alt=\"Stihl\">\n      <div class=\"external-header\">Forestry and Landscaping</div>\n    </div>\n    <a href=\"/pages/locations\"><div class=\"button\">Learn More</div></a>\n  </div>\n  <div class=\"external-box\">\n    <div class=\"external-header-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/WVCO_logo_White.png?v=1721605616\" alt=\"WVCO\">\n      <div class=\"external-header\">World Class</div>\n      <div class=\"external-text\">\n        Partnering Through Service, Innovation, and Integrity\n      </div>\n    </div>\n    <a href=\"/pages/wvco\"><div class=\"button\">Learn More</div></a>\n  </div>\n</div>\n\n<style>\n.home-external-container {\n    display: flex;\n    gap: 20px;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n.external-box{\n  display: flex;\n  flex-direction: column;\n  padding: 30px;\n  align-items: center;\n  justify-content: center;\n  background-color: #0b213e;\n  flex-grow: 1;\n  flex-basis: 200px;\n}\n\nimg{\n  width: 200px;\n}\n\n.external-header{\n  color: white;\n  font-size: 20px;\n  font-weight: 700;\n  margin-top: 10px;\n}\n\n.external-text{\n  color: white;\n  font-size: 14px;\n  text-align: center;\n}\n\n.external-header-wrapper{\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.button{\n  color: white;\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 700;\n  margin-top: 10px;\n  background-color: #F57523;\n  padding: 10px 20px;\n}\n</style>"
       }
     },
     "dynamic_html_8ALBP4": {
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div id=\"storefrontMap\">\n<\/div>\n<div id=\"storeReviews\">\n<\/div>\n<div id=\"storeDetails\">\n<\/div>"
+        "custom_html": "<div id=\"storefrontMap\">\n</div>\n<div id=\"storeReviews\">\n</div>\n<div id=\"storeDetails\">\n</div>"
       }
     },
     "dynamic_rich_text_A8Hiw4": {
@@ -79,7 +79,7 @@
       "settings": {
         "width": "regular",
         "title": "PRODUCTS AND SERVICES",
-        "text": "<h4>Family owned & operated since 1996<\/h4><p>With over 25 years of experience in the railway industry, our team truly understands the cost of downtime and the urgency required when repairing and inspecting the track. We mean it when we say: quick service, quick delivery, quick turnaround on repairs<\/p>",
+        "text": "<h4>Family owned & operated since 1996</h4><p>With over 25 years of experience in the railway industry, our team truly understands the cost of downtime and the urgency required when repairing and inspecting the track. We mean it when we say: quick service, quick delivery, quick turnaround on repairs</p>",
         "heading_size": "large",
         "text_alignment": "center"
       }
@@ -90,7 +90,7 @@
         "promotion_fhN3LK": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home1.png",
+            "image": "shopify://shop_images/home1.png",
             "title": "THOUSANDS OF IN-STOCK PARTS, TOOLS & ACCESSORIES",
             "text": "Backtrack has a wide range of products in stock including a complete selection of handheld gas, electric and hydraulic powered tools. We carry an extensive stock of OEM factory approved parts and many hard-to-find or discontinued items.",
             "color": "#4d4d4d",
@@ -105,7 +105,7 @@
         "promotion_zGqiHP": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home2.png",
+            "image": "shopify://shop_images/home2.png",
             "title": "MAINTENANCE & REPAIRS",
             "text": "Backtrack is a factory authorized repair, warranty and distribution centre for most major railway manufacturers. Our factory-trained technicians provide quick turnaround for all makes of railway tools whether hydraulic, gas or electric powered equipment.",
             "color": "#4d4d4d",
@@ -120,7 +120,7 @@
         "promotion_LwBpgC": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home3.png",
+            "image": "shopify://shop_images/home3.png",
             "title": "EQUIPMENT RENTAL",
             "text": "Buying equipment for one-off or rare jobs is costly. Backtrack offers an extensive catalogue of rental equipment and can assist you with your needs.",
             "color": "#4d4d4d",
@@ -135,7 +135,7 @@
         "promotion_Pnd99c": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home4.png",
+            "image": "shopify://shop_images/home4.png",
             "title": "EXCLUSIVE PRODUCTS",
             "text": "With our unique focus on the railway industry, we have been able to manufacture safer, higher quality, longer lasting tools and equipment to better serve you. Check out our website or ask us about our exclusive products.",
             "color": "#4d4d4d",
@@ -172,9 +172,9 @@
           "type": "highlight",
           "settings": {
             "icon": "icon-delivery",
-            "image": "shopify:\/\/shop_images\/noun-spare-parts-5837807_1.svg",
+            "image": "shopify://shop_images/noun-spare-parts-5837807_1.svg",
             "title": "THOUSANDS OF IN-STOCK PARTS, TOOLS & ACCESSORIES",
-            "text": "<p>Backtrack has a wide range of products in stock including a complete selection of handheld gas, electric and hydraulic powered tools. We carry an extensive stock of OEM factory approved parts and many hard-to-find or discontinued items.<\/p>",
+            "text": "<p>Backtrack has a wide range of products in stock including a complete selection of handheld gas, electric and hydraulic powered tools. We carry an extensive stock of OEM factory approved parts and many hard-to-find or discontinued items.</p>",
             "link": ""
           }
         },
@@ -182,9 +182,9 @@
           "type": "highlight",
           "settings": {
             "icon": "icon-cell-phone",
-            "image": "shopify:\/\/shop_images\/noun-repair-2311197_1.svg",
+            "image": "shopify://shop_images/noun-repair-2311197_1.svg",
             "title": "MAINTENANCE & REPAIRS",
-            "text": "<p>Backtrack is a factory authorized repair, warranty and distribution centre for most major railway manufacturers. Our factory-trained technicians provide quick turnaround for all makes of railway tools whether hydraulic, gas or electric powered equipment.<\/p>",
+            "text": "<p>Backtrack is a factory authorized repair, warranty and distribution centre for most major railway manufacturers. Our factory-trained technicians provide quick turnaround for all makes of railway tools whether hydraulic, gas or electric powered equipment.</p>",
             "link": ""
           }
         },
@@ -192,9 +192,9 @@
           "type": "highlight",
           "settings": {
             "icon": "icon-chat-alternate",
-            "image": "shopify:\/\/shop_images\/noun-apartment-rental-4137192_1.svg",
+            "image": "shopify://shop_images/noun-apartment-rental-4137192_1.svg",
             "title": "EQUIPMENT RENTAL",
-            "text": "<p>Buying equipment for one-off or rare jobs is costly. Backtrack offers an extensive catalogue of rental equipment and can assist you with your needs.<\/p>",
+            "text": "<p>Buying equipment for one-off or rare jobs is costly. Backtrack offers an extensive catalogue of rental equipment and can assist you with your needs.</p>",
             "link": ""
           }
         },
@@ -202,9 +202,9 @@
           "type": "highlight",
           "settings": {
             "icon": "icon-pin",
-            "image": "shopify:\/\/shop_images\/logo.png",
+            "image": "shopify://shop_images/logo.png",
             "title": "EXCLUSIVE PRODUCTS",
-            "text": "<p>With our unique focus on the railway industry, we have been able to manufacture safer, higher quality, longer lasting tools and equipment to better serve you. Check out our website or ask us about our exclusive products.<\/p>",
+            "text": "<p>With our unique focus on the railway industry, we have been able to manufacture safer, higher quality, longer lasting tools and equipment to better serve you. Check out our website or ask us about our exclusive products.</p>",
             "link": ""
           }
         }
@@ -232,12 +232,12 @@
     "dynamic_html_pQLY9J": {
       "type": "dynamic-html",
       "custom_css": [
-        ".home-statement {display: flex; gap: 20px; padding: 50px; justify-content: space-around; background: url(https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/Rectangle_10.png?v=1700076556); background-size: cover; background-repeat: no-repeat; flex-wrap: wrap; color: white; font-size: 1.2em; font-weight: 700;}",
+        ".home-statement {display: flex; gap: 20px; padding: 50px; justify-content: space-around; background: url(https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Rectangle_10.png?v=1700076556); background-size: cover; background-repeat: no-repeat; flex-wrap: wrap; color: white; font-size: 1.2em; font-weight: 700;}",
         ".orange {color: #f57523;}"
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"home-statement\">\n    <p>YOUR <span class=\"orange\">ONE-STOP<\/span> RAILWAY EQUIPMENT, PARTS &amp; SERVICE SOLUTION<\/p>\n    <p><span class=\"orange\">THOUSANDS<\/span> OF IN-STOCK PARTS, TOOLS AND ACCESSORIES<\/p>\n    <p><span class=\"orange\">SAME-DAY SHIPPING<\/span> ON MANY OF OUR IN-STOCK ITEMS<\/p>\n<\/div>"
+        "custom_html": "<div class=\"home-statement\">\n    <p>YOUR <span class=\"orange\">ONE-STOP</span> RAILWAY EQUIPMENT, PARTS &amp; SERVICE SOLUTION</p>\n    <p><span class=\"orange\">THOUSANDS</span> OF IN-STOCK PARTS, TOOLS AND ACCESSORIES</p>\n    <p><span class=\"orange\">SAME-DAY SHIPPING</span> ON MANY OF OUR IN-STOCK ITEMS</p>\n</div>"
       }
     },
     "dynamic_featured_collection": {
@@ -316,7 +316,7 @@
           "type": "collection",
           "settings": {
             "collection": "stihl-tools-equipment",
-            "image": "shopify:\/\/shop_images\/stihl2.png",
+            "image": "shopify://shop_images/stihl2.png",
             "title": "Stihl"
           }
         }
@@ -343,7 +343,7 @@
     "dynamic_html_dErhpD": {
       "type": "dynamic-html",
       "custom_css": [
-        ".main-container {background: url(https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/St_1.png?v=1700159838); background-repeat: no-repeat; background-size: cover; padding: 50px 20px; border-radius: 25px;}",
+        ".main-container {background: url(https://cdn.shopify.com/s/files/1/0616/5590/8525/files/St_1.png?v=1700159838); background-repeat: no-repeat; background-size: cover; padding: 50px 20px; border-radius: 25px;}",
         "h2 {color: white; text-align: center; margin-bottom: 50px;}",
         ".home-value {display: flex; color: white; gap: 20px; flex-wrap: wrap; justify-content: center;}",
         ".home-value-content {flex-basis: 20%;}",
@@ -351,7 +351,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"main-container\">\n<h2>THE VALUE WE PROVIDE<\/h2>\n<div class=\"home-value\">\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>In-house design and manufacturing<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Project assistance to ensure you have what you need on-site for every project<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Knowledgeable and experienced staff in our five locations across Canada<\/p>\n    <\/div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"><\/rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n        <\/svg>\n        <p>Factory authorized in-house repairs and support for all major brands.<\/p>\n    <\/div>\n    \n<\/div>\n<\/div>"
+        "custom_html": "<div class=\"main-container\">\n<h2>THE VALUE WE PROVIDE</h2>\n<div class=\"home-value\">\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"></rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n        </svg>\n        <p>In-house design and manufacturing</p>\n    </div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"></rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n        </svg>\n        <p>Project assistance to ensure you have what you need on-site for every project</p>\n    </div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"></rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n        </svg>\n        <p>Knowledgeable and experienced staff in our five locations across Canada</p>\n    </div>\n    <div class=\"home-value-content\">\n        <svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <rect x=\"0.5\" y=\"0.5\" width=\"39\" height=\"39\" rx=\"19.5\" stroke=\"white\"></rect>\n            <path d=\"M27.2223 14.4443L17.2917 24.4443L12.7778 19.8989\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n        </svg>\n        <p>Factory authorized in-house repairs and support for all major brands.</p>\n    </div>\n    \n</div>\n</div>"
       }
     },
     "dynamic_image_with_text_FEUAXk": {
@@ -359,13 +359,13 @@
       "custom_css": [],
       "settings": {
         "section_heading": "",
-        "image": "shopify:\/\/shop_images\/Group_215.png",
+        "image": "shopify://shop_images/Group_215.png",
         "desktop_height": "natural",
         "mobile_height": "natural",
         "desktop_image_alignment": "left",
         "mobile_image_alignment": "top",
         "heading": "Canada’s exclusive spikefast retailer",
-        "subheading": "<p>SpikeFast outperforms wood plugs, polymeric, and epoxy foam. SpikeFast lasts longer than the competition allowing crews to re-spike more rail in less time, providing an immediate return on investment<\/p>",
+        "subheading": "<p>SpikeFast outperforms wood plugs, polymeric, and epoxy foam. SpikeFast lasts longer than the competition allowing crews to re-spike more rail in less time, providing an immediate return on investment</p>",
         "text_alignment": "left",
         "button_label": "Button",
         "button_link": ""
@@ -376,7 +376,7 @@
       "settings": {
         "width": "regular",
         "title": "THE BEST BRANDS & EQUIPMENT",
-        "text": "<p>We have worked hard to build relationships with the most reputable brands and suppliers in the industry to ensure we have the highest quality parts and equipment available to you when needed.<\/p>",
+        "text": "<p>We have worked hard to build relationships with the most reputable brands and suppliers in the industry to ensure we have the highest quality parts and equipment available to you when needed.</p>",
         "heading_size": "medium",
         "text_alignment": "center"
       }
@@ -387,7 +387,7 @@
       "custom_css": [],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"main-container\">\n    <div class=\"marquee-container\"> \n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_geismar.png?v=1679458952\" width=\"140\" height=\"140\" alt=\"Geismar\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_harsco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Harsco\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_portaco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"PortaCo\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_husqvarna.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Husqvarna\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/STANLEY_LOGO.png?v=1665753150\" width=\"140\" height=\"140\" alt=\"Stanley\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/ROBEL_North_America_Logo_R_4c-modified_1_378289e8-039d-4f08-97a1-cbaec9ff9e05.svg?v=1702293483\" width=\"140\" height=\"140\" alt=\"Robel\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/MILWAUKEE_logo_RGB-white-in-box-modified_1_35efd338-0fae-460a-969f-03003f806f42.svg?v=1702295402\" width=\"140\" height=\"140\" alt=\"Milwaukee\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_logo_wvco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"WVCO\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/brand_grey_pneumatic.jpg?v=1679459439\" width=\"140\" height=\"140\" alt=\"GP\">\n    <\/div>\n<\/div>"
+        "custom_html": "<div class=\"main-container\">\n    <div class=\"marquee-container\"> \n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_logo_geismar.png?v=1679458952\" width=\"140\" height=\"140\" alt=\"Geismar\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_logo_harsco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Harsco\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_logo_portaco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"PortaCo\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_logo_husqvarna.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"Husqvarna\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/STANLEY_LOGO.png?v=1665753150\" width=\"140\" height=\"140\" alt=\"Stanley\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/ROBEL_North_America_Logo_R_4c-modified_1_378289e8-039d-4f08-97a1-cbaec9ff9e05.svg?v=1702293483\" width=\"140\" height=\"140\" alt=\"Robel\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/MILWAUKEE_logo_RGB-white-in-box-modified_1_35efd338-0fae-460a-969f-03003f806f42.svg?v=1702295402\" width=\"140\" height=\"140\" alt=\"Milwaukee\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_logo_wvco.png?v=1679458106\" width=\"140\" height=\"140\" alt=\"WVCO\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/brand_grey_pneumatic.jpg?v=1679459439\" width=\"140\" height=\"140\" alt=\"GP\">\n    </div>\n</div>"
       }
     },
     "dynamic_logo_list_FNjHPr": {
@@ -396,63 +396,63 @@
         "logo_bhz9Ja": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_geismar.png",
+            "image": "shopify://shop_images/brand_logo_geismar.png",
             "link": ""
           }
         },
         "logo_FdxeFp": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_harsco.png",
+            "image": "shopify://shop_images/brand_logo_harsco.png",
             "link": ""
           }
         },
         "logo_YwxNPq": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_portaco.png",
+            "image": "shopify://shop_images/brand_logo_portaco.png",
             "link": ""
           }
         },
         "logo_RhYYmM": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_husqvarna.png",
+            "image": "shopify://shop_images/brand_logo_husqvarna.png",
             "link": ""
           }
         },
         "logo_rVTDam": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/STANLEY_LOGO.png",
+            "image": "shopify://shop_images/STANLEY_LOGO.png",
             "link": ""
           }
         },
         "logo_Hdr7hW": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ROBEL_North_America_Logo_R_4c-modified_1.svg",
+            "image": "shopify://shop_images/ROBEL_North_America_Logo_R_4c-modified_1.svg",
             "link": ""
           }
         },
         "logo_z8i3qC": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/MILWAUKEE_logo_RGB-white-in-box-modified_1_51c86d47-0604-4b90-b849-5d3997a0faad.svg",
+            "image": "shopify://shop_images/MILWAUKEE_logo_RGB-white-in-box-modified_1_51c86d47-0604-4b90-b849-5d3997a0faad.svg",
             "link": ""
           }
         },
         "logo_EPWh6c": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_logo_wvco_2.svg",
+            "image": "shopify://shop_images/brand_logo_wvco_2.svg",
             "link": ""
           }
         },
         "logo_Raz9fz": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand_grey_pneumatic_1.svg",
+            "image": "shopify://shop_images/brand_grey_pneumatic_1.svg",
             "link": ""
           }
         }
@@ -476,13 +476,13 @@
       "type": "dynamic-image-with-text",
       "settings": {
         "section_heading": "",
-        "image": "shopify:\/\/shop_images\/CCAB_member_logo-web.jpg",
+        "image": "shopify://shop_images/CCAB_member_logo-web.jpg",
         "desktop_height": "natural",
         "mobile_height": "natural",
         "desktop_image_alignment": "left",
         "mobile_image_alignment": "top",
         "heading": "",
-        "subheading": "<p>CCAB builds bridges between Indigenous and non-Indigenous peoples, businesses, and communities through diverse programming, providing tools, training, network building, major business awards, and national events.<\/p>",
+        "subheading": "<p>CCAB builds bridges between Indigenous and non-Indigenous peoples, businesses, and communities through diverse programming, providing tools, training, network building, major business awards, and national events.</p>",
         "text_alignment": "left",
         "button_label": "Button",
         "button_link": ""
@@ -493,7 +493,7 @@
       "custom_css": [],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"home-perks-container\">\n    <div class=\"home-perks-image\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/Canada.png?v=1700162938\" alt=\"Canada\">\n    <\/div>\n    <div class=\"home-perks-text-content\">\n        <div>\n            <h4>BACKTRACK IS YOUR<br> <span class=\"orange\">PARTNER IN SUCCESS<\/span>\n<\/h4>\n            <p>Backtrack is equipped to meet any of your safety, <br>maintanance, rail handling &amp; construction needs.<\/p>\n        <\/div>\n        <div>\n            <h4>DIRECT SHIPPING <br> <span class=\"orange\">ANYWHERE IN CANADA<\/span>\n<\/h4>\n            <p>Backtrack makes it easy to get what you need when you need it.<\/p>\n        <\/div>\n        <div>\n            <h4>OPTIONS TO SUIT<br> <span class=\"orange\">YOUR NEEDS<\/span>\n<\/h4>\n            <p>Order online, over-the-phone or in-store. Pick up in-store or <br>ship direct to your location.<\/p>\n        <\/div>\n    <\/div>\n<\/div>\n\n<style>\n.home-perks-container {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  padding: 50px 20px;\n  gap: 50px;\n}\n\n.home-perks-image {\n  flex: 0 0 50%;\n  \/* Ensures the image container respects width without stretching *\/\n}\n\n.home-perks-image img {\n  width: 100%;\n  height: auto;\n  display: block;\n  max-width: 100%;\n  \/* Ensures the image never exceeds its container and keeps aspect ratio *\/\n}\n\n.home-perks-text-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n\n.orange {\n  color: #f57523;\n}\n\n\/* Mobile: Stack on smaller screens *\/\n@media (max-width: 1024px) {\n  .home-perks-container {\n    flex-direction: column-reverse;\n    text-align: center;\n  }\n\n  .home-perks-image {\n    width: 100%;\n    max-width: 500px;\n    margin: 0 auto;\n  }\n\n  .home-perks-image img {\n    width: 100%;\n    height: auto;\n  }\n}\n<\/style>"
+        "custom_html": "<div class=\"home-perks-container\">\n    <div class=\"home-perks-image\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/Canada.png?v=1700162938\" alt=\"Canada\">\n    </div>\n    <div class=\"home-perks-text-content\">\n        <div>\n            <h4>BACKTRACK IS YOUR<br> <span class=\"orange\">PARTNER IN SUCCESS</span>\n</h4>\n            <p>Backtrack is equipped to meet any of your safety, <br>maintanance, rail handling &amp; construction needs.</p>\n        </div>\n        <div>\n            <h4>DIRECT SHIPPING <br> <span class=\"orange\">ANYWHERE IN CANADA</span>\n</h4>\n            <p>Backtrack makes it easy to get what you need when you need it.</p>\n        </div>\n        <div>\n            <h4>OPTIONS TO SUIT<br> <span class=\"orange\">YOUR NEEDS</span>\n</h4>\n            <p>Order online, over-the-phone or in-store. Pick up in-store or <br>ship direct to your location.</p>\n        </div>\n    </div>\n</div>\n\n<style>\n.home-perks-container {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  padding: 50px 20px;\n  gap: 50px;\n}\n\n.home-perks-image {\n  flex: 0 0 50%;\n  /* Ensures the image container respects width without stretching */\n}\n\n.home-perks-image img {\n  width: 100%;\n  height: auto;\n  display: block;\n  max-width: 100%;\n  /* Ensures the image never exceeds its container and keeps aspect ratio */\n}\n\n.home-perks-text-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n\n.orange {\n  color: #f57523;\n}\n\n/* Mobile: Stack on smaller screens */\n@media (max-width: 1024px) {\n  .home-perks-container {\n    flex-direction: column-reverse;\n    text-align: center;\n  }\n\n  .home-perks-image {\n    width: 100%;\n    max-width: 500px;\n    margin: 0 auto;\n  }\n\n  .home-perks-image img {\n    width: 100%;\n    height: auto;\n  }\n}\n</style>"
       }
     }
   },

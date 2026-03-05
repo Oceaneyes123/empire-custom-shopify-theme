@@ -1,6 +1,6 @@
 (() => {
   const VIDEO_URL =
-    'https://cdn.shopify.com/videos/c/o/v/16757e02bea2496aa2498566ce9dfcaf.mp4';
+    'https://cdn.shopify.com/videos/c/o/v/7e472b13d6d6460db09861bd5efc6650.mp4';
 
   if (typeof window === 'undefined') return;
 

@@ -8,29 +8,53 @@
   <div class="checkout-modal__backdrop checkout-modal-backdrop" data-checkout-modal-backdrop></div>
   <div class="checkout-modal__content">
     <div class="checkout-modal__header">
-      <h2 class="checkout-modal__title">Almost There... Just a Quick Word on Shipping, Duties, and Tariffs</h2>
+      <h2 class="checkout-modal__title checkout-modal__title--page-1 is-active" data-checkout-modal-title-page="1">Almost There... Just a Quick Word on Shipping, Duties, and Tariffs</h2>
+      <h2 class="checkout-modal__title checkout-modal__title--page-2" data-checkout-modal-title-page="2">Refund Update</h2>
       <button class="checkout-modal__close" data-checkout-modal-close aria-label="{{ 'general.accessibility.close' | t }}">
         {% render 'icon-menu-close' %}
       </button>
     </div>
     <div class="checkout-modal__body">
-      <div class="checkout-modal__warning-box">
-        <div class="checkout-modal__warning">
-          <div class="checkout-modal__warning-icon">⚠️</div>
-          <div class="checkout-modal__warning-content">
-            <div class="checkout-modal__section">
-              <h4>For U.S. customers:</h4>
-              <p>Import duties or taxes may apply at delivery. We do our best to minimize these costs, but they are set by U.S. Customs and are the buyer's responsibility unless otherwise noted.</p>
+      <div class="checkout-modal__page is-active" data-checkout-modal-page="1">
+        <div class="checkout-modal__warning-box">
+          <div class="checkout-modal__warning">
+            <div class="checkout-modal__warning-icon">⚠️</div>
+            <div class="checkout-modal__warning-content">
+              <div class="checkout-modal__section">
+                <h4>For U.S. customers:</h4>
+                <p>Import duties or taxes may apply at delivery. We do our best to minimize these costs, but they are set by U.S. Customs and are the buyer's responsibility unless otherwise noted.</p>
+              </div>
+
+              <div class="checkout-modal__section">
+                <h4>For all customers (U.S. and Canada):</h4>
+                <p>Shipping rates shown at checkout are estimates. In some cases, the final shipping cost may need to be adjusted based on order size, weight, or delivery location.</p>
+                <p>If any changes apply to your order, someone from the Backtrack team will contact you directly before processing.</p>
+              </div>
+
+              <div class="checkout-modal__section checkout-modal__section--highlight">
+                <p><strong>Questions? Reach out—we're happy to help before you place your order.</strong></p>
+              </div>
             </div>
-            
-            <div class="checkout-modal__section">
-              <h4>For all customers (U.S. and Canada):</h4>
-              <p>Shipping rates shown at checkout are estimates. In some cases, the final shipping cost may need to be adjusted based on order size, weight, or delivery location.</p>
-              <p>If any changes apply to your order, someone from the Backtrack team will contact you directly before processing.</p>
-            </div>
-            
-            <div class="checkout-modal__section checkout-modal__section--highlight">
-              <p><strong>Questions? Reach out—we're happy to help before you place your order.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-modal__page" data-checkout-modal-page="2">
+        <div class="checkout-modal__warning-box checkout-modal__warning-box--info">
+          <div class="checkout-modal__warning checkout-modal__warning--info">
+            <div class="checkout-modal__warning-icon checkout-modal__warning-icon--info">i</div>
+            <div class="checkout-modal__warning-content">
+              <div class="checkout-modal__section">
+                <p>I acknowledge and agree that approved website returns are subject to a 3.5% deduction to offset non-refundable payment processing fees. This deduction does not apply to defective items, items damaged in transit, or items shipped in error.</p>
+              </div>
+
+              <div class="checkout-modal__section">
+                <h4>Refunds</h4>
+                <p>If a return is approved, we will notify you by email once we have received and inspected your return. If approved, your refund will be processed to your original payment method within 10 business days. Please note that it may take additional time for your bank or credit card provider to process and post the refund.</p>
+                <p>For website purchases, approved returns are subject to a 3.5% deduction to offset non-refundable payment processing fees incurred at the time of the original transaction. This deduction will be applied to the total refund amount.</p>
+                <p>This 3.5% deduction does not apply to items that are defective, damaged in transit, or shipped in error by Backtrack Railway Services Ltd.</p>
+                <p>If more than 15 business days have passed since your return was approved and you have not received your refund, please contact us at website@backtrack.com.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -40,7 +64,13 @@
       <button class="button-secondary checkout-modal__cancel" data-checkout-modal-close>
         Cancel
       </button>
-      <form action="{{ routes.cart_url }}" method="post" class="checkout-modal__form">
+      <button class="button-secondary checkout-modal__back" type="button" data-checkout-modal-back>
+        Back
+      </button>
+      <button class="button-primary checkout-modal__next" type="button" data-checkout-modal-next>
+        Next
+      </button>
+      <form action="{{ routes.cart_url }}" method="post" class="checkout-modal__form" data-checkout-modal-proceed-form>
         <button class="button-primary checkout-modal__proceed" type="submit" name="checkout">
           {% if settings.enable_checkout_lock_icon %}
             {% render 'icon-checkout-lock' %}

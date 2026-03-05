@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -20,14 +29,14 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"wvco-hero\">\n  <div class=\"container\">\n      <div class=\"video-wrapper\">\n        <iframe src=\"https:\/\/player.vimeo.com\/video\/896932588?h=a9b8c43080\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\"><\/iframe>\n      <\/div>\n <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/wvco-header.png?v=1720481920\">\n          <\/div>\n          <div class=\"button-container\">\n              <a href=\"https:\/\/wvcorailroad.com\/\"><button>Service, Innovation, Integrity<\/button><\/a>\n          <\/div>\n      <\/div>\n  <\/div>\n<\/div>"
+        "custom_html": "<div class=\"wvco-hero\">\n  <div class=\"container\">\n      <div class=\"video-wrapper\">\n        <iframe src=\"https://player.vimeo.com/video/896932588?h=a9b8c43080\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\"></iframe>\n      </div>\n <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/wvco-header.png?v=1720481920\">\n          </div>\n          <div class=\"button-container\">\n              <a href=\"https://wvcorailroad.com/\"><button>Service, Innovation, Integrity</button></a>\n          </div>\n      </div>\n  </div>\n</div>"
       }
     },
     "dynamic_html_fNrA6U": {
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"video-section\">\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/966968651?h=ddc5430d6c\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen><\/iframe>\n  <\/div>\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/954577211?h=8a3c5dcb72\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen><\/iframe>\n  <\/div>\n<\/div>\n\n<style>\n.video-section {\n  display: flex;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 20px;\n}\n\n.video-item {\n  flex-basis: 50%;\n}\n<\/style>"
+        "custom_html": "<div class=\"video-section\">\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https://player.vimeo.com/video/966968651?h=ddc5430d6c\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen></iframe>\n  </div>\n  <div class=\"video-item\">\n    <iframe title=\"vimeo-player\" src=\"https://player.vimeo.com/video/954577211?h=8a3c5dcb72\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen></iframe>\n  </div>\n</div>\n\n<style>\n.video-section {\n  display: flex;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 20px;\n}\n\n.video-item {\n  flex-basis: 50%;\n}\n</style>"
       }
     },
     "dynamic_featured_collection_Pehgxe": {
@@ -45,9 +54,17 @@
         "cta_label": "Shop collection",
         "cta_button_style": "primary"
       }
+    },
+    "seo_h1_wvco": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<h1 class=\"seo-h1-hidden\">WVCO Railway Products — SpikeFast &amp; Track Repair Materials</h1>\n<style>.seo-h1-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}</style>"
+      }
     }
   },
   "order": [
+    "seo_h1_wvco",
     "main",
     "dynamic_html_AUK8aC",
     "dynamic_html_fNrA6U",

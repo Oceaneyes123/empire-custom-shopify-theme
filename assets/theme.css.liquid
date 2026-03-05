@@ -24852,6 +24852,11 @@ h3.contact-heading {
   color: #1f2937;
   line-height: 1.3;
   padding-right: 16px;
+  display: none;
+}
+
+.checkout-modal__title.is-active {
+  display: block;
 }
 
 .checkout-modal__close {
@@ -24873,6 +24878,14 @@ h3.contact-heading {
 
 .checkout-modal__body {
   padding: 24px;
+}
+
+.checkout-modal__page {
+  display: none;
+}
+
+.checkout-modal__page.is-active {
+  display: block;
 }
 
 .checkout-modal__warning-box {
@@ -24902,6 +24915,29 @@ h3.contact-heading {
 
 .checkout-modal__warning-content {
   flex: 1;
+}
+
+.checkout-modal__warning-box--info {
+  border-color: #9ca3af;
+  background: #f8fafc;
+}
+
+.checkout-modal__warning--info {
+  border-left-color: #6b7280;
+}
+
+.checkout-modal__warning-icon--info {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 .checkout-modal__section {
@@ -24945,6 +24981,11 @@ h3.contact-heading {
   border: 1px solid #d1d5db;
   color: #374151;
   transition: all 0.2s ease;
+}
+
+.checkout-modal__back,
+.checkout-modal__next {
+  flex: 1;
 }
 
 .checkout-modal__cancel:hover {
@@ -25031,6 +25072,8 @@ h3.contact-heading {
   }
   
   .checkout-modal__cancel,
+  .checkout-modal__back,
+  .checkout-modal__next,
   .checkout-modal__form {
     flex: none;
   }

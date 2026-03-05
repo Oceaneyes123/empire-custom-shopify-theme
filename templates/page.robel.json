@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -19,7 +28,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"robel-hero\">\n  <div class=\"container\">\n      <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0616\/5590\/8525\/files\/robel-header.png?v=1720481917\">\n          <\/div>\n          <div class=\"button-container\">\n              <a href=\"https:\/\/www.robel.us\/en\/\"><button>GREAT ON TRACK<\/button><\/a>\n          <\/div>\n      <\/div>\n      <div class=\"video-wrapper\">\n          <iframe width=\"1280\" height=\"720\" src=\"https:\/\/www.youtube.com\/embed\/9vNxYO7_BnI?si=wKeCb8eZwlFqwoUE\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"><\/iframe>\n      <\/div>\n  <\/div>\n<\/div>"
+        "custom_html": "<div class=\"robel-hero\">\n  <div class=\"container\">\n      <div class=\"title-area\">\n          <div class=\"header-img\">\n              <img src=\"https://cdn.shopify.com/s/files/1/0616/5590/8525/files/robel-header.png?v=1720481917\">\n          </div>\n          <div class=\"button-container\">\n              <a href=\"https://www.robel.us/en/\"><button>GREAT ON TRACK</button></a>\n          </div>\n      </div>\n      <div class=\"video-wrapper\">\n          <iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/9vNxYO7_BnI?si=wKeCb8eZwlFqwoUE\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\n      </div>\n  </div>\n</div>"
       }
     },
     "dynamic_featured_collection_qh3KKd": {
@@ -48,9 +57,17 @@
         "show_author": true,
         "show_excerpt": true
       }
+    },
+    "seo_h1_robel": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<h1 class=\"seo-h1-hidden\">ROBEL Railway Maintenance Equipment — Authorized Canadian Distributor</h1>\n<style>.seo-h1-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}</style>"
+      }
     }
   },
   "order": [
+    "seo_h1_robel",
     "main",
     "dynamic_html_fh76dV",
     "dynamic_featured_collection_qh3KKd",
