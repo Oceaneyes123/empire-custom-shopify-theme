@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextButton = modal.querySelector('[data-checkout-modal-next]');
   const backButton = modal.querySelector('[data-checkout-modal-back]');
   const proceedForm = modal.querySelector('[data-checkout-modal-proceed-form]');
+  const consentCheckbox = modal.querySelector('[data-checkout-modal-consent]');
+
+  function updateProceedState() {
+    if (!proceedButton) return;
+    proceedButton.disabled = consentCheckbox ? !consentCheckbox.checked : false;
+  }
 
   function setPage(page) {
     pages.forEach(section => {
@@ -23,9 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nextButton) nextButton.style.display = page === 1 ? '' : 'none';
     if (backButton) backButton.style.display = page === 2 ? '' : 'none';
     if (proceedForm) proceedForm.style.display = page === 2 ? '' : 'none';
+    updateProceedState();
   }
   
   function showModal() {
+    if (consentCheckbox) consentCheckbox.checked = false;
     setPage(1);
     modal.classList.add('active');
     modal.style.display = 'flex';
@@ -33,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function hideModal() {
+    if (consentCheckbox) consentCheckbox.checked = false;
     setPage(1);
     modal.classList.remove('active');
     modal.style.display = 'none';
@@ -128,12 +137,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (backButton) {
     backButton.addEventListener('click', () => setPage(1));
   }
+  if (consentCheckbox) {
+    consentCheckbox.addEventListener('change', updateProceedState);
+  }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) hideModal();
   });
 
   // Initialize and observe for new buttons
   setPage(1);
+  updateProceedState();
   attachListeners();
   
   const observer = new MutationObserver(() => {
